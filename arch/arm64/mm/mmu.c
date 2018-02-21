@@ -1373,6 +1373,9 @@ int pud_set_huge(pud_t *pudp, phys_addr_t phys, pgprot_t prot)
 	/* Only allow permission changes for now */
 	if (!pgattr_change_is_safe(READ_ONCE(pud_val(*pud)),
 				   pud_val(new_pud)))
+
+	/* ioremap_page_range doesn't honour BBM */
+	if (pud_present(READ_ONCE(*pudp)))
 		return 0;
 
 	BUG_ON(phys & ~PUD_MASK);
@@ -1389,6 +1392,9 @@ int pmd_set_huge(pmd_t *pmdp, phys_addr_t phys, pgprot_t prot)
 	/* Only allow permission changes for now */
 	if (!pgattr_change_is_safe(READ_ONCE(pmd_val(*pmd)),
 				   pmd_val(new_pmd)))
+
+	/* ioremap_page_range doesn't honour BBM */
+	if (pmd_present(READ_ONCE(*pmdp)))
 		return 0;
 
 	BUG_ON(phys & ~PMD_MASK);
