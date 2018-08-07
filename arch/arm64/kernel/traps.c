@@ -771,7 +771,6 @@ asmlinkage void bad_mode(struct pt_regs *regs, int reason, unsigned int esr)
  */
 	arm64_notify_die("Oops - bad mode", regs, &info, 0);
 #else
-	die("Oops - bad mode", regs, 0);
 	local_irq_disable();
 	panic("bad mode");
 #endif
