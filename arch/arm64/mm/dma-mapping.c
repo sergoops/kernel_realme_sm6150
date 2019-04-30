@@ -859,6 +859,14 @@ static int __iommu_mmap_attrs(struct device *dev, struct vm_area_struct *vma,
 	else if (!is_vmalloc_addr(cpu_addr))
 		pfn = page_to_pfn(virt_to_page(cpu_addr));
 	else if (is_vmalloc_addr(cpu_addr))
+
+	if (!is_vmalloc_addr(cpu_addr)) {
+		unsigned long pfn = page_to_pfn(virt_to_page(cpu_addr));
+		return __swiotlb_mmap_pfn(vma, pfn, size);
+	}
+
+	if (attrs & DMA_ATTR_FORCE_CONTIGUOUS) {
+
 		/*
 		 * DMA_ATTR_FORCE_CONTIGUOUS and atomic pool allocations are
 		 * always remapped, hence in the vmalloc space.
@@ -885,6 +893,13 @@ static int __iommu_get_sgtable(struct device *dev, struct sg_table *sgt,
 	else if (!is_vmalloc_addr(cpu_addr))
 		page = virt_to_page(cpu_addr);
 	else if (is_vmalloc_addr(cpu_addr))
+
+	if (!is_vmalloc_addr(cpu_addr)) {
+		struct page *page = virt_to_page(cpu_addr);
+		return __swiotlb_get_sgtable_page(sgt, page, size);
+	}
+
+	if (attrs & DMA_ATTR_FORCE_CONTIGUOUS) {
 		/*
 		 * DMA_ATTR_FORCE_CONTIGUOUS and atomic pool allocations
 		 * are always remapped, hence in the vmalloc space.
