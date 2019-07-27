@@ -3,9 +3,9 @@ make[1]: Entering directory '/home/sergoops/aospk/kernel/realme/sm6150/out'
 scripts/kconfig/conf  --silentoldconfig Kconfig
   CHK     include/config/kernel.release
   GEN     ./Makefile
+  UPD     include/config/kernel.release
   CHK     include/generated/uapi/linux/version.h
   UPD     include/generated/uapi/linux/version.h
-  UPD     include/config/kernel.release
   Using .. as source for kernel
   CHK     include/generated/utsrelease.h
   UPD     include/generated/utsrelease.h
@@ -26,100 +26,169 @@ scripts/kconfig/conf  --silentoldconfig Kconfig
   CC      arch/arm64/kernel/signal32.o
   OBJCOPY arch/arm64/kernel/vdso/vdso.so
   AS      arch/arm64/kernel/vdso/vdso.o
-  CC      kernel/sys.o
   AR      arch/arm64/kernel/vdso/built-in.o
+  CC      kernel/sys.o
+  CC      fs/read_write.o
   AR      init/built-in.o
-  CC      mm/zsmalloc.o
-  CC      fs/exfat/exfat_core.o
-  CC      fs/exfat/exfat_super.o
-  CC      fs/exfat/exfat_api.o
+  DTC     arch/arm64/boot/dts/qcom/sdmmagpie.dtb
   AR      arch/arm64/kernel/built-in.o
-  CC      fs/exfat/exfat_blkdev.o
-  CC      fs/exfat/exfat_cache.o
-  CC      net/bridge/netfilter/ebtables.o
+  CC      sound/soc/soc-jack.o
+  CC      drivers/base/firmware_class.o
+  CC      net/core/dev.o
+  DTC     arch/arm64/boot/dts/qcom/sdmmagpie-idp-overlay.dtbo
+  CC      kernel/bpf/syscall.o
+  CC      net/ipv6/mcast.o
+  CC      net/ipv4/tcp.o
+  CC      techpack/audio/asoc/codecs/tfa98xx-v6/tfa98xx_v6.o
+  CC      techpack/audio/asoc/codecs/wcd934x/wcd934x.o
+  AR      drivers/base/built-in.o
+  CC      techpack/audio/asoc/codecs/wcd937x/wcd937x-mbhc.o
+  CC      fs/exfat/exfat_core.o
+  CC      drivers/bluetooth/bluetooth-power.o
+  CC      drivers/bluetooth/btfm_slim.o
+  AR      sound/soc/snd-soc-core.o
 ../fs/exfat/exfat_core.c:186:3: warning: misleading indentation; statement is not part of the previous 'if' [-Wmisleading-indentation]
                 p_fs->PBR_sector = 0;
                 ^
 ../fs/exfat/exfat_core.c:183:2: note: previous statement is here
         if (sector_read(sb, 0, &tmp_bh, 1) != FFS_SUCCESS)
         ^
-  CC      drivers/base/firmware_class.o
-  CC      fs/exfat/exfat_data.o
-  CC      fs/exfat/exfat_nls.o
-  AR      mm/built-in.o
-  CC      fs/exfat/exfat_oal.o
-  CC      kernel/bpf/syscall.o
-  CC      sound/soc/soc-core.o
-  CC      techpack/audio/asoc/codecs/tfa98xx-v6/tfa98xx_v6.o
-  DTC     arch/arm64/boot/dts/qcom/sdmmagpie.dtb
-  CC      sound/soc/soc-dapm.o
-  AR      drivers/base/built-in.o
-  DTC     arch/arm64/boot/dts/qcom/sdmmagpie-idp-overlay.dtbo
-1 warning generated.
-  AR      fs/exfat/exfat.o
-  AR      fs/exfat/built-in.o
-  CC      fs/ext4/balloc.o
-  AR      net/bridge/netfilter/built-in.o
-  AR      net/bridge/built-in.o
-  CC      fs/ext4/bitmap.o
-  CC      kernel/irq/irqdesc.o
+  AR      sound/soc/built-in.o
+  AR      sound/built-in.o
+  CC      drivers/bluetooth/btfm_slim_codec.o
+  CC      drivers/clk/clk-gpio.o
   AR      techpack/audio/asoc/codecs/tfa98xx-v6/tfa98xx-v6_dlkm.o
   AR      techpack/audio/asoc/codecs/tfa98xx-v6/built-in.o
-  AR      techpack/audio/asoc/codecs/built-in.o
+  CC      net/sched/sch_api.o
+  AR      techpack/audio/asoc/codecs/wcd937x/wcd937x_dlkm.o
+  AR      techpack/audio/asoc/codecs/wcd937x/built-in.o
+  CC      net/sched/cls_api.o
+  CC      net/ipv4/tcp_output.o
   AR      kernel/bpf/built-in.o
-  CC      techpack/audio/asoc/oppo_mm_audio_kevent.o
-  CC      drivers/gpio/gpiolib.o
-  AR      kernel/irq/built-in.o
-  CC      fs/ext4/block_validity.o
-  AR      sound/soc/snd-soc-core.o
-  CC      fs/ext4/dir.o
-  CC      kernel/sched/idle.o
-  CC      fs/ext4/ext4_jbd2.o
-  AR      sound/soc/built-in.o
-  AR      net/built-in.o
-  AR      sound/built-in.o
-  CC      fs/ext4/extents.o
-  AR      techpack/audio/asoc/platform_dlkm.o
-  AR      techpack/audio/asoc/built-in.o
-  AR      techpack/audio/built-in.o
-  AR      techpack/built-in.o
-  CC      drivers/input/oppo_fp_drivers/goodix_optical_fp/gf_spi.o
+  AR      drivers/bluetooth/built-in.o
   CC      kernel/trace/trace.o
+  CC      kernel/sched/idle.o
+1 warning generated.
+  CC      fs/exfat/exfat_super.o
+  CC      fs/exfat/exfat_api.o
+  AR      net/ipv6/ipv6.o
+  AR      net/ipv6/built-in.o
+  CC      drivers/clk/qcom/mdss/mdss-pll-util.o
+  CC      drivers/clk/qcom/mdss/mdss-pll.o
+  CC      net/sched/act_api.o
+  CC      net/sched/act_gact.o
+  CC      drivers/clk/qcom/mdss/mdss-dsi-pll-10nm.o
+  CC      drivers/clk/qcom/mdss/mdss-dp-pll-10nm.o
+  AR      kernel/sched/built-in.o
+  CC      drivers/clk/qcom/mdss/mdss-dp-pll-10nm-util.o
+  CC      kernel/oppo_kevent_upload.o
+  CC      fs/exfat/exfat_blkdev.o
+  CC      net/sched/act_mirred.o
+  CC      fs/exfat/exfat_cache.o
+  AR      net/core/built-in.o
+  CC      fs/exfat/exfat_data.o
+  CC      drivers/clk/qcom/mdss/mdss-dsi-pll-7nm.o
+  CC      drivers/clk/qcom/mdss/mdss-dp-pll-7nm.o
+  CC      drivers/clk/qcom/mdss/mdss-dp-pll-7nm-util.o
+  CC      techpack/audio/asoc/codecs/wcd9xxx-core.o
+  CC      techpack/audio/asoc/codecs/wcd9xxx-irq.o
+  CC      fs/exfat/exfat_nls.o
+  CC      drivers/clk/qcom/mdss/mdss-dsi-pll-28lpm.o
+  AR      net/ipv4/built-in.o
+  CC      drivers/clk/qcom/mdss/mdss-dsi-pll-28nm-util.o
+  CC      fs/exfat/exfat_oal.o
+  AR      kernel/trace/built-in.o
+  CC      kernel/module.o
+  CC      drivers/clk/qcom/mdss/mdss-dsi-pll-14nm.o
+  CC      net/sched/act_skbedit.o
+  CC      techpack/audio/asoc/codecs/wcd934x/wcd934x-mbhc.o
+  CC      fs/ext4/balloc.o
+  CC      fs/ext4/bitmap.o
+  CC      drivers/clk/qcom/mdss/mdss-dsi-pll-14nm-util.o
+  CC      drivers/clk/qcom/mdss/mdss-dp-pll-14nm.o
+  CC      drivers/clk/qcom/mdss/mdss-hdmi-pll-28lpm.o
+  AR      fs/exfat/exfat.o
+  AR      fs/exfat/built-in.o
+  CHK     kernel/config_data.h
+  CC      techpack/audio/asoc/codecs/wcd9xxx-utils.o
+  CC      net/sched/sch_htb.o
+  CC      fs/ext4/block_validity.o
+  CC      fs/ext4/dir.o
+  CC      drivers/extcon/extcon-usb-gpio.o
+  AR      drivers/clk/qcom/mdss/built-in.o
+  AR      drivers/clk/qcom/built-in.o
+  CC      drivers/esoc/esoc-mdm-pon.o
+  CC      drivers/esoc/esoc-mdm-4x.o
+  AR      drivers/clk/built-in.o
+  CC      techpack/audio/soc/pinctrl-wcd.o
+  CC      drivers/esoc/esoc-mdm-drv.o
+  AR      techpack/audio/asoc/codecs/wcd934x/wcd934x_dlkm.o
+  AR      techpack/audio/asoc/codecs/wcd934x/built-in.o
+  CC      techpack/audio/asoc/codecs/msm-cdc-pinctrl.o
+  AR      drivers/extcon/built-in.o
+  CC      techpack/audio/soc/pinctrl-lpi.o
+  CC      fs/ext4/ext4_jbd2.o
+  CC      fs/ext4/extents.o
+  CC      net/sched/sch_ingress.o
+  CC      drivers/gpio/devres.o
+  CC      net/sched/sch_prio.o
   CC      fs/ext4/extents_status.o
+  AR      drivers/esoc/built-in.o
+  CC      drivers/hid/hid-qvr.o
+  CC      techpack/audio/asoc/codecs/wsa881x.o
+  CC      techpack/audio/soc/swr-mstr-ctrl.o
+  AR      kernel/built-in.o
+  AR      techpack/audio/soc/pinctrl_wcd_dlkm.o
+  AR      techpack/audio/soc/pinctrl_lpi_dlkm.o
+  CC      net/sched/sch_multiq.o
+  CC      drivers/gpu/msm/kgsl_pool.o
+  CC      drivers/gpio/gpiolib.o
+  CC      drivers/gpu/drm/bridge/analogix-anx7625.o
   CC      fs/ext4/file.o
+  AR      drivers/hid/built-in.o
+  CC      drivers/gpu/drm/bridge/lt9611.o
   CC      fs/ext4/fsmap.o
   CC      fs/ext4/fsync.o
   CC      fs/ext4/hash.o
+  CC      techpack/audio/asoc/codecs/wcd-mbhc-v2.o
+  AR      drivers/gpu/msm/msm_kgsl_core.o
+  AR      drivers/gpu/msm/built-in.o
+  CC      techpack/audio/asoc/codecs/wcd-mbhc-adc.o
+  CC      net/sched/sch_fq_codel.o
   CC      fs/ext4/ialloc.o
+  AR      techpack/audio/soc/swr_ctrl_dlkm.o
+  AR      techpack/audio/soc/built-in.o
   CC      fs/ext4/indirect.o
-  AR      drivers/input/oppo_fp_drivers/goodix_optical_fp/built-in.o
-  AR      drivers/gpio/built-in.o
-  CC      drivers/input/oppo_fp_drivers/silead/silead_fp_platform.o
-  AR      kernel/sched/built-in.o
-  CC      kernel/oppo_kevent_upload.o
   CC      fs/ext4/inline.o
-  CC      drivers/md/dm-table.o
   CC      fs/ext4/inode.o
   CC      fs/ext4/ioctl.o
   CC      fs/ext4/mballoc.o
-  CC      drivers/gpu/msm/kgsl_pool.o
+  AR      drivers/gpu/drm/bridge/built-in.o
   CC      fs/ext4/migrate.o
+  CC      net/sched/cls_u32.o
+  CC      drivers/gpio/gpiolib-legacy.o
+  CC      techpack/audio/asoc/codecs/wcd-mbhc-legacy.o
+  CC      net/sched/cls_fw.o
   CC      fs/ext4/mmp.o
+  CC      net/sched/cls_flow.o
   CC      fs/ext4/move_extent.o
+  CC      net/sched/cls_bpf.o
+  CC      drivers/gpu/drm/msm/dp/dp_usbpd.o
   CC      fs/ext4/namei.o
+  CC      drivers/gpio/gpiolib-of.o
+  CC      net/sched/ematch.o
+  CC      drivers/gpio/gpiolib-sysfs.o
   CC      fs/ext4/page-io.o
-  AR      kernel/trace/built-in.o
-  CC      kernel/module.o
-  AR      drivers/input/oppo_fp_drivers/silead/built-in.o
-  AR      drivers/input/oppo_fp_drivers/built-in.o
   CC      fs/ext4/readpage.o
-  CC      drivers/input/touchscreen/oppo_touchscreen/Synaptics/S3706/synaptics_drivers_s3706.o
-  AR      drivers/gpu/msm/msm_kgsl_core.o
-  AR      drivers/gpu/msm/built-in.o
-  AR      drivers/gpu/built-in.o
-  CC      fs/ext4/resize.o
-  CC      drivers/md/dm-kcopyd.o
-  CC      fs/ext4/super.o
+  AR      techpack/audio/asoc/codecs/wcd_core_dlkm.o
+  AR      techpack/audio/asoc/codecs/wsa881x_dlkm.o
+  CC      drivers/gpu/drm/msm/dp/dp_parser.o
+  AR      techpack/audio/asoc/codecs/mbhc_dlkm.o
+  AR      techpack/audio/asoc/codecs/built-in.o
+  CC      techpack/audio/asoc/oppo_mm_audio_kevent.o
+  CC      drivers/gpu/drm/msm/dp/dp_power.o
+  CC      net/sched/em_cmp.o
+  CC      net/sched/em_nbyte.o
 ../fs/ext4/page-io.c:491:3: warning: misleading indentation; statement is not part of the previous 'if' [-Wmisleading-indentation]
                 if (IS_ERR(data_page)) {
                 ^
@@ -127,269 +196,471 @@ scripts/kconfig/conf  --silentoldconfig Kconfig
         if (!fscrypt_using_hardware_encryption(inode))
         ^
 1 warning generated.
+  CC      fs/ext4/resize.o
+  AR      drivers/gpio/built-in.o
+  CC      fs/ext4/super.o
   CC      fs/ext4/symlink.o
-  CC      drivers/media/platform/msm/camera/cam_cdm/cam_cdm_core_common.o
-  CC      drivers/media/platform/msm/camera/cam_core/cam_context.o
-  CC      drivers/media/platform/msm/camera/cam_core/cam_context_utils.o
+  CC      drivers/gpu/drm/msm/dp/dp_catalog.o
+  CC      drivers/gpu/drm/msm/dp/dp_catalog_v420.o
+  CC      drivers/i2c/i2c-core-base.o
+  CC      drivers/gpu/drm/msm/dp/dp_catalog_v200.o
+  CC      net/sched/em_u32.o
+  CC      drivers/input/keyboard/gpio_keys.o
+  CC      drivers/gpu/drm/msm/dp/dp_aux.o
+  CC      techpack/audio/asoc/sm6150.o
   CC      fs/ext4/sysfs.o
-  CC      drivers/md/dm-bufio.o
-  CC      drivers/media/platform/msm/camera/cam_core/cam_node.o
-  CC      drivers/media/platform/msm/camera/cam_core/cam_subdev.o
   CC      fs/ext4/xattr.o
-  CC      drivers/media/platform/msm/camera/cam_cdm/cam_cdm_virtual_core.o
+  CC      drivers/gpu/drm/msm/dp/dp_panel.o
+  CC      net/sched/em_meta.o
+  AR      drivers/input/keyboard/built-in.o
+  CC      net/sched/em_text.o
+  CC      drivers/input/oppo_fp_drivers/fpc/fpc1020_tee.o
   CC      fs/ext4/xattr_trusted.o
+  CC      drivers/gpu/drm/msm/dp/dp_link.o
   CC      fs/ext4/xattr_user.o
   CC      fs/ext4/xattr_security.o
-  CC      drivers/media/platform/msm/camera/cam_cdm/cam_cdm_hw_core.o
-  CHK     kernel/config_data.h
-  AR      drivers/media/platform/msm/camera/cam_core/built-in.o
-  AR      kernel/built-in.o
-  CC      drivers/media/usb/uvc/uvc_driver.o
-  CC      drivers/media/v4l2-core/v4l2-dev.o
-  CC      drivers/media/v4l2-core/v4l2-ioctl.o
-  CC      drivers/media/media-device.o
-  AR      drivers/input/touchscreen/oppo_touchscreen/Synaptics/S3706/built-in.o
-  AR      drivers/input/touchscreen/oppo_touchscreen/Synaptics/built-in.o
-  AR      drivers/input/touchscreen/oppo_touchscreen/built-in.o
-  AR      drivers/input/touchscreen/built-in.o
-  AR      drivers/input/built-in.o
-  CC      drivers/net/bonding/bond_main.o
+  AR      drivers/input/oppo_fp_drivers/fpc/built-in.o
+  CC      drivers/input/oppo_fp_drivers/goodix_optical_fp/gf_spi.o
+  AR      drivers/i2c/i2c-core.o
+  AR      drivers/i2c/built-in.o
+  CC      drivers/input/oppo_fp_drivers/goodix_optical_fp/gf_platform.o
+  CC      drivers/gpu/drm/msm/dp/dp_ctrl.o
+  CC      drivers/gpu/drm/msm/dp/dp_audio.o
+  AR      net/sched/built-in.o
+  AR      net/built-in.o
   CC      fs/ext4/discard.o
-  AR      drivers/md/dm-mod.o
-  AR      drivers/md/built-in.o
-  CC      drivers/nfc/nq-nci.o
-  AR      drivers/media/platform/msm/camera/cam_cdm/built-in.o
-  CC      drivers/media/platform/msm/camera/cam_fd/fd_hw_mgr/cam_fd_hw_mgr.o
-  CC      drivers/media/platform/msm/camera/cam_cpas/cam_cpas_intf.o
-  CC      drivers/media/platform/msm/camera/cam_fd/fd_hw_mgr/fd_hw/cam_fd_hw_dev.o
-  CC      drivers/media/platform/msm/camera/cam_fd/fd_hw_mgr/fd_hw/cam_fd_hw_core.o
-  CC      drivers/media/media-devnode.o
-  CC      drivers/media/media-entity.o
-  CC      drivers/media/usb/uvc/uvc_queue.o
-  AR      drivers/nfc/built-in.o
-  CC      drivers/media/platform/msm/camera/cam_fd/fd_hw_mgr/fd_hw/cam_fd_hw_soc.o
-  CC      drivers/media/v4l2-core/v4l2-device.o
-  AR      drivers/media/platform/msm/camera/cam_cpas/built-in.o
-  CC      drivers/media/platform/msm/camera/cam_fd/cam_fd_dev.o
-  CC      drivers/media/usb/uvc/uvc_v4l2.o
-  CC      drivers/media/platform/msm/camera/cam_isp/cam_isp_dev.o
+  CC      drivers/gpu/drm/msm/dp/dp_debug.o
+  CC      drivers/input/oppo_seccommon_drivers/oppo_secure_common/oppo_secure_common.o
+  AR      techpack/audio/asoc/platform_dlkm.o
+  AR      techpack/audio/asoc/machine_dlkm.o
+  AR      techpack/audio/asoc/built-in.o
+  AR      techpack/audio/built-in.o
+  AR      techpack/built-in.o
+  CC      drivers/gpu/drm/msm/dp/dp_hpd.o
+  CC      drivers/leds/leds-qpnp-flash-v2.o
+  CC      drivers/input/oppo_fp_drivers/oppo_fp_common/oppo_fp_common.o
+  AR      drivers/input/oppo_seccommon_drivers/oppo_secure_common/built-in.o
+  AR      drivers/input/oppo_seccommon_drivers/built-in.o
+  AR      drivers/input/oppo_fp_drivers/goodix_optical_fp/built-in.o
+  CC      drivers/input/oppo_fp_drivers/silead/silead_fp_platform.o
+  CC      drivers/input/touchscreen/oppo_touchscreen/util_interface/touch_interfaces.o
+  CC      drivers/input/touchscreen/oppo_touchscreen/Synaptics/synaptics_touch_panel_remote.o
+  CC      drivers/input/touchscreen/oppo_touchscreen/Synaptics/S3706/synaptics_drivers_s3706.o
+  CC      drivers/input/touchscreen/oppo_touchscreen/Synaptics/synaptics_common.o
+  CC      drivers/gpu/drm/msm/dp/dp_bridge_hpd.o
+  CC      drivers/gpu/drm/msm/dp/dp_gpio_hpd.o
+  AR      drivers/input/oppo_fp_drivers/oppo_fp_common/built-in.o
+  CC      drivers/gpu/drm/msm/dp/dp_lphw_hpd.o
+  CC      drivers/gpu/drm/msm/dp/dp_display.o
+  CC      drivers/gpu/drm/msm/dp/dp_drm.o
+  CC      drivers/gpu/drm/msm/dp/dp_hdcp2p2.o
+  AR      drivers/input/touchscreen/oppo_touchscreen/util_interface/built-in.o
+  AR      drivers/leds/built-in.o
+  CC      drivers/input/touchscreen/oppo_touchscreen/touchpanel_common_driver.o
+  CC      drivers/gpu/drm/msm/dp/dp_mst_drm.o
+  CC      drivers/gpu/drm/msm/sde/sde_crtc.o
+  CC      drivers/gpu/drm/msm/sde/sde_encoder.o
+  CC      drivers/gpu/drm/msm/sde/sde_encoder_phys_vid.o
   AR      fs/ext4/ext4.o
   AR      fs/ext4/built-in.o
-  CC      drivers/media/platform/msm/camera/cam_isp/isp_hw_mgr/hw_utils/cam_isp_packet_parser.o
-  CC      drivers/media/platform/msm/camera/cam_isp/cam_isp_context.o
-  CC      drivers/media/usb/uvc/uvc_video.o
-  AR      drivers/media/platform/msm/camera/cam_fd/fd_hw_mgr/fd_hw/built-in.o
-  AR      drivers/media/platform/msm/camera/cam_fd/fd_hw_mgr/built-in.o
-  CC      drivers/media/platform/msm/camera/cam_fd/cam_fd_context.o
-  CC      drivers/media/platform/msm/camera/cam_icp/icp_hw/icp_hw_mgr/cam_icp_hw_mgr.o
+  CC      drivers/media/platform/msm/camera/cam_cdm/cam_cdm_core_common.o
+  AR      drivers/input/oppo_fp_drivers/silead/built-in.o
+  AR      drivers/input/oppo_fp_drivers/built-in.o
+  CC      drivers/gpu/drm/msm/sde/sde_encoder_phys_cmd.o
   AR      fs/built-in.o
-  CC      drivers/media/v4l2-core/v4l2-fh.o
-  AR      drivers/net/bonding/bonding.o
-  AR      drivers/net/bonding/built-in.o
-  AR      drivers/media/platform/msm/camera/cam_fd/built-in.o
-  CC      drivers/media/platform/msm/camera/cam_jpeg/cam_jpeg_dev.o
-  CC      drivers/media/platform/msm/camera/cam_lrme/lrme_hw_mgr/lrme_hw/cam_lrme_hw_dev.o
-  CC      drivers/media/platform/msm/camera/cam_jpeg/jpeg_hw/cam_jpeg_hw_mgr.o
-  AR      drivers/media/platform/msm/camera/cam_isp/isp_hw_mgr/hw_utils/built-in.o
-  CC      drivers/media/usb/uvc/uvc_ctrl.o
+  CC      drivers/media/platform/msm/camera/cam_cdm/cam_cdm_virtual_core.o
+  CC      drivers/media/platform/msm/camera/cam_cdm/cam_cdm_hw_core.o
+  CC      drivers/gpu/drm/msm/sde/sde_irq.o
+  CC      drivers/media/usb/uvc/uvc_driver.o
+  CC      drivers/gpu/drm/msm/sde/sde_core_irq.o
+  CC      drivers/gpu/drm/msm/sde/sde_core_perf.o
+  CC      drivers/gpu/drm/msm/sde/sde_rm.o
+  AR      drivers/media/platform/msm/camera/cam_cdm/built-in.o
+  CC      drivers/media/platform/msm/camera/cam_core/cam_context.o
+  CC      drivers/gpu/drm/msm/sde/sde_kms_utils.o
+  AR      drivers/input/touchscreen/oppo_touchscreen/Synaptics/S3706/built-in.o
+  AR      drivers/input/touchscreen/oppo_touchscreen/Synaptics/built-in.o
+  CC      drivers/gpu/drm/msm/sde/sde_kms.o
+  CC      drivers/gpu/drm/msm/sde/sde_plane.o
+  CC      drivers/media/v4l2-core/v4l2-dev.o
+  CC      drivers/media/platform/msm/camera/cam_core/cam_context_utils.o
+  CC      drivers/gpu/drm/msm/sde/sde_connector.o
+  CC      drivers/media/v4l2-core/v4l2-ioctl.o
+  AR      drivers/input/touchscreen/oppo_touchscreen/built-in.o
+  CC      drivers/input/touchscreen/touch.o
+  CC      drivers/gpu/drm/msm/sde/sde_color_processing.o
+  CC      drivers/media/usb/uvc/uvc_queue.o
+  CC      drivers/gpu/drm/msm/sde/sde_vbif.o
+  AR      drivers/input/touchscreen/built-in.o
+  AR      drivers/input/built-in.o
+  CC      drivers/misc/fpr_FingerprintCard/fpc1020_platform_tee.o
+  CC      drivers/gpu/drm/msm/sde_io_util.o
+  CC      drivers/media/platform/msm/camera/cam_core/cam_node.o
   CC      drivers/media/platform/msm/sde/rotator/sde_rotator_dev.o
-  AR      drivers/net/built-in.o
-  CC      drivers/media/platform/msm/camera/cam_isp/isp_hw_mgr/cam_ife_hw_mgr.o
-  CC      drivers/media/platform/msm/sde/rotator/sde_rotator_core.o
-  CC      drivers/media/usb/uvc/uvc_status.o
+  CC      drivers/media/usb/uvc/uvc_v4l2.o
+  CC      drivers/media/v4l2-core/v4l2-device.o
+  CC      drivers/gpu/drm/msm/sde/sde_hw_reg_dma_v1_color_proc.o
+  CC      drivers/media/usb/uvc/uvc_video.o
+  AR      drivers/misc/fpr_FingerprintCard/fpc1020.o
+  AR      drivers/misc/fpr_FingerprintCard/built-in.o
+  AR      drivers/misc/built-in.o
+  CC      drivers/gpu/drm/msm/sde/sde_hw_color_proc_v4.o
+  CC      drivers/media/platform/msm/camera/cam_core/cam_subdev.o
+  CC      drivers/media/media-device.o
+  CC      drivers/gpu/drm/msm/sde/sde_hw_ad4.o
+  CC      drivers/media/media-devnode.o
+  CC      drivers/gpu/drm/msm/sde_edid_parser.o
+  CC      drivers/media/usb/uvc/uvc_ctrl.o
+  CC      drivers/media/v4l2-core/v4l2-fh.o
   CC      drivers/media/v4l2-core/v4l2-event.o
-  CC      drivers/media/platform/msm/camera/cam_jpeg/cam_jpeg_context.o
-  CC      drivers/media/v4l2-core/v4l2-ctrls.o
-  CC      drivers/media/platform/msm/camera/cam_lrme/lrme_hw_mgr/lrme_hw/cam_lrme_hw_core.o
+  AR      drivers/media/platform/msm/camera/cam_core/built-in.o
+  CC      drivers/media/platform/msm/camera/cam_cpas/cam_cpas_intf.o
+  CC      drivers/media/usb/uvc/uvc_status.o
+  CC      drivers/gpu/drm/msm/sde_hdcp_1x.o
   CC      drivers/media/usb/uvc/uvc_isight.o
-  CC      drivers/platform/msm/ipa/ipa_v3/rmnet_ipa.o
-  AR      drivers/media/platform/msm/camera/cam_jpeg/jpeg_hw/built-in.o
+  CC      drivers/gpu/drm/msm/sde_hdcp_2x.o
+  CC      drivers/media/media-entity.o
   CC      drivers/media/usb/uvc/uvc_debugfs.o
-  AR      drivers/media/platform/msm/camera/cam_jpeg/built-in.o
+  CC      drivers/gpu/drm/msm/sde_rsc.o
   CC      drivers/media/usb/uvc/uvc_entity.o
-  CC      drivers/media/platform/msm/camera/cam_req_mgr/cam_req_mgr_core.o
-  AR      drivers/media/platform/msm/camera/cam_icp/icp_hw/icp_hw_mgr/built-in.o
-  AR      drivers/media/platform/msm/camera/cam_icp/icp_hw/built-in.o
-  CC      drivers/media/platform/msm/camera/cam_lrme/lrme_hw_mgr/lrme_hw/cam_lrme_hw_soc.o
-  CC      drivers/media/platform/msm/camera/cam_icp/cam_icp_subdev.o
-  CC      drivers/media/v4l2-core/v4l2-subdev.o
-  CC      drivers/media/platform/msm/camera/cam_req_mgr/cam_req_mgr_dev.o
-  CC      drivers/media/platform/msm/camera/cam_req_mgr/cam_req_mgr_util.o
+  CC      drivers/media/platform/msm/sde/rotator/sde_rotator_core.o
   CC      drivers/media/platform/msm/sde/rotator/sde_rotator_base.o
+  CC      drivers/media/v4l2-core/v4l2-ctrls.o
+  CC      drivers/media/platform/msm/camera/cam_fd/fd_hw_mgr/fd_hw/cam_fd_hw_dev.o
+  CC      drivers/media/platform/msm/camera/cam_fd/cam_fd_dev.o
+  CC      drivers/media/platform/msm/camera/cam_fd/cam_fd_context.o
   AR      drivers/media/usb/uvc/uvcvideo.o
   AR      drivers/media/usb/uvc/built-in.o
   AR      drivers/media/usb/built-in.o
-  CC      drivers/platform/msm/msm_11ad/msm_11ad.o
-  AR      drivers/media/media.o
-  AR      drivers/media/platform/msm/camera/cam_isp/isp_hw_mgr/built-in.o
-  AR      drivers/media/platform/msm/camera/cam_lrme/lrme_hw_mgr/lrme_hw/built-in.o
-  AR      drivers/media/platform/msm/camera/cam_isp/built-in.o
-  CC      drivers/media/platform/msm/camera/cam_lrme/lrme_hw_mgr/cam_lrme_hw_mgr.o
+  CC      drivers/media/platform/msm/camera/cam_fd/fd_hw_mgr/cam_fd_hw_mgr.o
+  AR      drivers/media/platform/msm/camera/cam_cpas/built-in.o
+  CC      drivers/media/platform/msm/camera/cam_isp/isp_hw_mgr/hw_utils/cam_isp_packet_parser.o
+  CC      drivers/media/platform/msm/camera/cam_icp/icp_hw/icp_hw_mgr/cam_icp_hw_mgr.o
+  CC      drivers/media/platform/msm/camera/cam_fd/fd_hw_mgr/fd_hw/cam_fd_hw_core.o
+  CC      drivers/gpu/drm/msm/sde_rsc_hw.o
+  CC      drivers/media/platform/msm/camera/cam_fd/fd_hw_mgr/fd_hw/cam_fd_hw_soc.o
+  CC      drivers/media/platform/msm/sde/rotator/sde_rotator_formats.o
+  CC      drivers/media/platform/msm/sde/rotator/sde_rotator_util.o
+  CC      drivers/media/platform/msm/sde/rotator/sde_rotator_io_util.o
+  CC      drivers/gpu/drm/msm/sde_rsc_hw_v3.o
+  CC      drivers/media/platform/msm/sde/rotator/sde_rotator_smmu.o
+  CC      drivers/gpu/drm/msm/sde/sde_fence.o
+  CC      drivers/media/platform/msm/sde/rotator/sde_rotator_r1_wb.o
+  AR      drivers/media/platform/msm/camera/cam_isp/isp_hw_mgr/hw_utils/built-in.o
+  CC      drivers/media/platform/msm/camera/cam_icp/cam_icp_subdev.o
+  AR      drivers/media/platform/msm/camera/cam_fd/fd_hw_mgr/fd_hw/built-in.o
+  CC      drivers/media/v4l2-core/v4l2-subdev.o
   CC      drivers/media/platform/msm/camera/cam_icp/cam_icp_context.o
-  CC      drivers/media/v4l2-core/v4l2-clk.o
-  CC      drivers/media/platform/msm/camera/cam_req_mgr/cam_req_mgr_workq.o
-  CC      drivers/media/platform/msm/camera/cam_sensor_module/cam_actuator/cam_actuator_dev.o
-  CC      drivers/media/platform/msm/camera/cam_sensor_module/cam_cci/cam_cci_dev.o
-  CC      drivers/media/platform/msm/camera/cam_sensor_module/cam_actuator/cam_actuator_core.o
-  CC      drivers/media/v4l2-core/v4l2-async.o
-  CC      drivers/media/platform/msm/camera/cam_req_mgr/cam_mem_mgr.o
-  CC      drivers/media/platform/msm/camera/cam_req_mgr/cam_req_mgr_debug.o
-  AR      drivers/media/platform/msm/camera/cam_icp/built-in.o
-  CC      drivers/media/platform/msm/camera/cam_smmu/cam_smmu_api.o
+  CC      drivers/media/platform/msm/sde/rotator/sde_rotator_r1_pipe.o
+  CC      drivers/media/platform/msm/sde/rotator/sde_rotator_r1_ctl.o
+  AR      drivers/media/platform/msm/camera/cam_fd/fd_hw_mgr/built-in.o
+  AR      drivers/media/platform/msm/camera/cam_fd/built-in.o
+  CC      drivers/media/platform/msm/camera/cam_isp/isp_hw_mgr/cam_ife_hw_mgr.o
+  CC      drivers/gpu/drm/msm/dsi-staging/dsi_phy.o
+  CC      drivers/gpu/drm/msm/dsi-staging/dsi_pwr.o
+  CC      drivers/media/platform/msm/sde/rotator/sde_rotator_r1.o
+  CC      drivers/media/platform/msm/sde/rotator/sde_rotator_r3.o
+  CC      drivers/media/platform/msm/sde/rotator/sde_rotator_sync.o
+  CC      drivers/gpu/drm/msm/dsi-staging/dsi_phy_hw_v2_0.o
+  CC      drivers/gpu/drm/msm/dsi-staging/dsi_phy_hw_v3_0.o
   CC      drivers/media/platform/msm/sde/rotator/sde_rotator_debug.o
-  AR      drivers/media/platform/msm/camera/cam_lrme/lrme_hw_mgr/built-in.o
-  CC      drivers/media/platform/msm/camera/cam_sensor_module/cam_cci/cam_cci_core.o
-  CC      drivers/media/platform/msm/camera/cam_sensor_module/cam_actuator/cam_actuator_soc.o
-  CC      drivers/media/platform/msm/camera/cam_lrme/cam_lrme_dev.o
-  CC      drivers/media/platform/msm/camera/cam_sync/cam_sync.o
-  AR      drivers/platform/msm/ipa/ipa_v3/built-in.o
-  AR      drivers/platform/msm/ipa/built-in.o
-  AR      drivers/platform/msm/msm_11ad/msm_11ad_proxy.o
-  CC      drivers/media/platform/msm/camera/cam_sync/cam_sync_util.o
-  AR      drivers/platform/msm/msm_11ad/built-in.o
-  CC      drivers/media/platform/msm/camera/cam_lrme/cam_lrme_context.o
-  AR      drivers/platform/msm/built-in.o
-  AR      drivers/platform/built-in.o
-  CC      drivers/media/platform/msm/camera/cam_utils/cam_packet_util.o
-  CC      drivers/power/oppo/adapter_ic/oppo_stm.o
+  CC      drivers/gpu/drm/msm/dsi-staging/dsi_phy_hw_v4_0.o
+  AR      drivers/media/platform/msm/camera/cam_icp/icp_hw/icp_hw_mgr/built-in.o
+  CC      drivers/gpu/drm/msm/dsi-staging/dsi_phy_timing_calc.o
+  AR      drivers/media/platform/msm/camera/cam_icp/icp_hw/built-in.o
+  CC      drivers/media/v4l2-core/v4l2-clk.o
+  AR      drivers/media/platform/msm/camera/cam_icp/built-in.o
+  CC      drivers/media/platform/msm/camera/cam_isp/cam_isp_dev.o
+  CC      drivers/media/platform/msm/sde/rotator/sde_rotator_r1_debug.o
+  CC      drivers/gpu/drm/msm/dsi-staging/dsi_phy_timing_v2_0.o
+  CC      drivers/gpu/drm/msm/dsi-staging/dsi_phy_timing_v3_0.o
+  CC      drivers/gpu/drm/msm/dsi-staging/dsi_phy_timing_v4_0.o
+  CC      drivers/media/platform/msm/camera/cam_isp/cam_isp_context.o
+  CC      drivers/gpu/drm/msm/dsi-staging/dsi_ctrl_hw_cmn.o
+  CC      drivers/gpu/drm/msm/dsi-staging/dsi_ctrl_hw_1_4.o
+  CC      drivers/media/platform/msm/sde/rotator/sde_rotator_r3_debug.o
+  CC      drivers/gpu/drm/msm/dsi-staging/dsi_ctrl_hw_2_0.o
+  CC      drivers/gpu/drm/msm/dsi-staging/dsi_ctrl_hw_2_2.o
+  CC      drivers/gpu/drm/msm/dsi-staging/dsi_ctrl.o
+  CC      drivers/gpu/drm/msm/dsi-staging/dsi_catalog.o
+  CC      drivers/media/v4l2-core/v4l2-async.o
+  CC      drivers/media/platform/msm/camera/cam_jpeg/jpeg_hw/cam_jpeg_hw_mgr.o
   CC      drivers/media/v4l2-core/v4l2-compat-ioctl32.o
-  CC      drivers/media/v4l2-core/v4l2-trace.o
-  AR      drivers/media/platform/msm/camera/cam_sensor_module/cam_actuator/built-in.o
-  AR      drivers/media/platform/msm/camera/cam_lrme/built-in.o
-  CC      drivers/media/platform/msm/camera/cam_sensor_module/cam_csiphy/cam_csiphy_soc.o
-  AR      drivers/media/platform/msm/camera/cam_req_mgr/built-in.o
-  CC      drivers/media/platform/msm/camera/cam_sensor_module/cam_csiphy/cam_csiphy_dev.o
-  CC      drivers/media/platform/msm/camera/cam_sensor_module/cam_eeprom/cam_eeprom_dev.o
-  CC      drivers/media/platform/msm/camera/cam_sensor_module/cam_eeprom/cam_eeprom_core.o
-  AR      drivers/media/platform/msm/camera/cam_sync/built-in.o
-  CC      drivers/media/platform/msm/camera/cam_utils/cam_trace.o
-  CC      drivers/media/platform/msm/camera/cam_sensor_module/cam_eeprom/cam_eeprom_soc.o
-  CC      drivers/media/platform/msm/camera/cam_sensor_module/cam_cci/cam_cci_soc.o
-  AR      drivers/power/oppo/adapter_ic/built-in.o
-  CC      drivers/power/oppo/charger_ic/oppo_battery_sm7150_P.o
   AR      drivers/media/platform/msm/sde/rotator/built-in.o
+  AR      drivers/media/platform/msm/camera/cam_isp/isp_hw_mgr/built-in.o
   AR      drivers/media/platform/msm/sde/built-in.o
-  CC      drivers/power/oppo/charger_ic/oppo_short_ic.o
-  CC      drivers/media/platform/msm/camera/cam_sensor_module/cam_csiphy/cam_csiphy_core.o
-  CC      drivers/power/oppo/gauge_ic/oppo_bq27541.o
-  AR      drivers/media/platform/msm/camera/cam_smmu/built-in.o
+  CC      drivers/media/v4l2-core/v4l2-trace.o
+  CC      drivers/gpu/drm/msm/dsi-staging/dsi_drm.o
   CC      drivers/media/platform/msm/vidc/msm_v4l2_vidc.o
-  CC      drivers/media/platform/msm/camera/cam_sensor_module/cam_flash/cam_flash_dev.o
-  CC      drivers/power/oppo/vooc_ic/oppo_n76e.o
   CC      drivers/media/platform/msm/vidc/msm_v4l2_private.o
-  AR      drivers/media/platform/msm/camera/cam_sensor_module/cam_eeprom/built-in.o
-  CC      drivers/media/platform/msm/vidc/msm_vidc_platform.o
-  AR      drivers/media/platform/msm/camera/cam_sensor_module/cam_cci/built-in.o
-  AR      drivers/media/platform/msm/camera/cam_utils/built-in.o
-  CC      drivers/media/platform/msm/camera/cam_sensor_module/cam_ois/cam_ois_dev.o
-  CC      drivers/power/oppo/oppo_charger.o
-  CC      drivers/media/platform/msm/camera/cam_sensor_module/cam_ois/cam_ois_core.o
+  CC      drivers/gpu/drm/msm/dsi-staging/dsi_display.o
+  CC      drivers/gpu/drm/msm/dsi-staging/dsi_panel.o
+  CC      drivers/media/platform/msm/camera/cam_lrme/lrme_hw_mgr/lrme_hw/cam_lrme_hw_dev.o
+  CC      drivers/media/platform/msm/camera/cam_lrme/lrme_hw_mgr/cam_lrme_hw_mgr.o
+  AR      drivers/media/platform/msm/camera/cam_isp/built-in.o
   CC      drivers/media/v4l2-core/v4l2-mc.o
-  AR      drivers/media/platform/msm/camera/cam_sensor_module/cam_csiphy/built-in.o
-  CC      drivers/media/platform/msm/camera/cam_sensor_module/cam_ois/cam_ois_soc.o
+  AR      drivers/media/platform/msm/camera/cam_jpeg/jpeg_hw/built-in.o
+  CC      drivers/media/platform/msm/camera/cam_jpeg/cam_jpeg_dev.o
+  CC      drivers/gpu/drm/msm/dsi-staging/dsi_clk_manager.o
+  CC      drivers/media/platform/msm/vidc/msm_vidc_platform.o
+  CC      drivers/media/platform/msm/camera/cam_lrme/lrme_hw_mgr/lrme_hw/cam_lrme_hw_core.o
+  CC      drivers/media/v4l2-core/v4l2-common.o
   CC      drivers/media/platform/msm/vidc/msm_vidc_common.o
   CC      drivers/media/platform/msm/vidc/msm_vidc.o
-  CC      drivers/power/oppo/vooc_ic/oppo_vooc_fw.o
+  CC      drivers/media/platform/msm/camera/cam_jpeg/cam_jpeg_context.o
   CC      drivers/media/platform/msm/vidc/msm_vdec.o
-  CC      drivers/media/platform/msm/camera/cam_sensor_module/cam_flash/cam_flash_core.o
-  AR      drivers/power/oppo/gauge_ic/built-in.o
-  CC      drivers/power/oppo/vooc_ic/oppo_stm8s.o
-  CC      drivers/media/platform/msm/vidc/msm_venc.o
-  CC      drivers/power/oppo/vooc_ic/oppo_rk826.o
-  AR      drivers/media/platform/msm/camera/cam_sensor_module/cam_ois/built-in.o
-  CC      drivers/media/platform/msm/camera/cam_sensor_module/cam_sensor/cam_sensor_dev.o
-  CC      drivers/media/v4l2-core/v4l2-common.o
-  CC      drivers/power/oppo/vooc_ic/oppo_op10.o
-  CC      drivers/media/platform/msm/vidc/msm_cvp.o
-  CC      drivers/media/platform/msm/camera/cam_sensor_module/cam_flash/cam_flash_soc.o
-  CC      drivers/media/platform/msm/vidc/msm_smem.o
-  CC      drivers/media/platform/msm/vidc/msm_vidc_debug.o
-  CC      drivers/power/oppo/oppo_vooc.o
-  AR      drivers/power/oppo/charger_ic/built-in.o
-  CC      drivers/media/platform/msm/vidc/msm_vidc_res_parse.o
-  CC      drivers/power/oppo/oppo_adapter.o
-  CC      drivers/media/platform/msm/camera/cam_sensor_module/cam_sensor/cam_sensor_core.o
+  CC      drivers/gpu/drm/msm/dsi-staging/oppo_display_private_api.o
+  CC      drivers/media/platform/msm/camera/cam_req_mgr/cam_req_mgr_core.o
   CC      drivers/media/v4l2-core/v4l2-mem2mem.o
+  CC      drivers/media/platform/msm/vidc/msm_venc.o
+  CC      drivers/media/platform/msm/camera/cam_lrme/lrme_hw_mgr/lrme_hw/cam_lrme_hw_soc.o
+  CC      drivers/gpu/drm/msm/dsi-staging/dsi_display_test.o
+  AR      drivers/media/platform/msm/camera/cam_jpeg/built-in.o
+  CC      drivers/gpu/drm/msm/sde/sde_hw_catalog.o
+  CC      drivers/media/platform/msm/camera/cam_sensor_module/cam_actuator/cam_actuator_dev.o
+  CC      drivers/media/platform/msm/camera/cam_sensor_module/cam_actuator/cam_actuator_core.o
+  AR      drivers/media/platform/msm/camera/cam_lrme/lrme_hw_mgr/lrme_hw/built-in.o
+  AR      drivers/media/platform/msm/camera/cam_lrme/lrme_hw_mgr/built-in.o
+  CC      drivers/media/platform/msm/camera/cam_lrme/cam_lrme_dev.o
+  CC      drivers/media/platform/msm/camera/cam_req_mgr/cam_req_mgr_dev.o
+  CC      drivers/gpu/drm/msm/sde/sde_hw_cdm.o
+  CC      drivers/media/platform/msm/camera/cam_smmu/cam_smmu_api.o
   CC      drivers/media/v4l2-core/videobuf2-core.o
-  AR      drivers/power/oppo/vooc_ic/built-in.o
-  CC      drivers/power/oppo/oppo_short.o
-  AR      drivers/media/platform/msm/camera/cam_sensor_module/cam_flash/built-in.o
+  CC      drivers/media/platform/msm/camera/cam_sensor_module/cam_actuator/cam_actuator_soc.o
+  CC      drivers/media/platform/msm/vidc/msm_cvp.o
+  CC      drivers/gpu/drm/msm/sde/sde_hw_dspp.o
+  CC      drivers/gpu/drm/msm/sde/sde_hw_intf.o
+  CC      drivers/gpu/drm/msm/sde/sde_hw_lm.o
+  CC      drivers/media/platform/msm/camera/cam_lrme/cam_lrme_context.o
+  CC      drivers/gpu/drm/msm/sde/sde_hw_ctl.o
+  AR      drivers/media/platform/msm/camera/cam_sensor_module/cam_actuator/built-in.o
+  CC      drivers/media/platform/msm/camera/cam_sensor_module/cam_cci/cam_cci_dev.o
+  AR      drivers/media/platform/msm/camera/cam_lrme/built-in.o
+  CC      drivers/media/platform/msm/camera/cam_sensor_module/cam_cci/cam_cci_core.o
+  CC      drivers/media/platform/msm/camera/cam_req_mgr/cam_req_mgr_util.o
+  CC      drivers/media/platform/msm/camera/cam_sensor_module/cam_cci/cam_cci_soc.o
+  CC      drivers/media/platform/msm/vidc/msm_smem.o
+  CC      drivers/gpu/drm/msm/sde/sde_hw_util.o
+  CC      drivers/gpu/drm/msm/sde/sde_hw_sspp.o
+  CC      drivers/media/platform/msm/vidc/msm_vidc_debug.o
+  CC      drivers/media/platform/msm/vidc/msm_vidc_res_parse.o
+  CC      drivers/media/platform/msm/camera/cam_req_mgr/cam_req_mgr_workq.o
+  CC      drivers/media/platform/msm/camera/cam_req_mgr/cam_mem_mgr.o
+  AR      drivers/media/platform/msm/camera/cam_smmu/built-in.o
+  CC      drivers/gpu/drm/msm/sde/sde_hw_wb.o
+  CC      drivers/gpu/drm/msm/sde/sde_hw_rot.o
+  CC      drivers/media/platform/msm/camera/cam_req_mgr/cam_req_mgr_debug.o
   CC      drivers/media/v4l2-core/videobuf2-v4l2.o
-  CC      drivers/media/platform/msm/camera/cam_sensor_module/cam_sensor_io/cam_sensor_io.o
-  CC      drivers/media/platform/msm/camera/cam_sensor_module/cam_sensor_io/cam_sensor_cci_i2c.o
-  CC      drivers/media/platform/msm/camera/cam_sensor_module/cam_sensor_io/cam_sensor_qup_i2c.o
-  CC      drivers/media/platform/msm/camera/cam_sensor_module/cam_sensor_io/cam_sensor_spi.o
   CC      drivers/media/platform/msm/vidc/venus_hfi.o
+  AR      drivers/media/platform/msm/camera/cam_sensor_module/cam_cci/built-in.o
+  CC      drivers/media/platform/msm/camera/cam_sensor_module/cam_csiphy/cam_csiphy_soc.o
+  CC      drivers/media/platform/msm/camera/cam_sensor_module/cam_csiphy/cam_csiphy_dev.o
+  CC      drivers/media/platform/msm/camera/cam_sensor_module/cam_csiphy/cam_csiphy_core.o
+  CC      drivers/gpu/drm/msm/sde/sde_hw_pingpong.o
+  CC      drivers/gpu/drm/msm/sde/sde_hw_top.o
+  CC      drivers/gpu/drm/msm/sde/sde_hw_interrupts.o
+  CC      drivers/gpu/drm/msm/sde/sde_hw_vbif.o
   CC      drivers/media/platform/msm/vidc/hfi_response_handler.o
-  AR      drivers/power/oppo/built-in.o
-  CC      drivers/media/platform/msm/camera/cam_sensor_module/cam_sensor/cam_sensor_soc.o
+  AR      drivers/media/platform/msm/camera/cam_req_mgr/built-in.o
+  CC      drivers/media/platform/msm/camera/cam_sync/cam_sync.o
+  CC      drivers/media/platform/msm/camera/cam_sync/cam_sync_util.o
+  CC      drivers/media/platform/msm/camera/cam_utils/cam_soc_util.o
+  CC      drivers/media/platform/msm/camera/cam_sensor_module/cam_eeprom/cam_eeprom_dev.o
+  AR      drivers/media/platform/msm/camera/cam_sensor_module/cam_csiphy/built-in.o
   AR      drivers/media/v4l2-core/videodev.o
+  CC      drivers/media/platform/msm/camera/cam_sensor_module/cam_eeprom/cam_eeprom_core.o
+  AR      drivers/media/v4l2-core/built-in.o
+  AR      drivers/media/media.o
+  CC      drivers/media/platform/msm/camera/cam_sensor_module/cam_eeprom/cam_eeprom_soc.o
+  CC      drivers/gpu/drm/msm/sde/sde_hw_blk.o
+  CC      drivers/media/platform/msm/camera/cam_sensor_module/cam_flash/cam_flash_dev.o
+  CC      drivers/gpu/drm/msm/sde/sde_formats.o
+  CC      drivers/media/platform/msm/camera/cam_sensor_module/cam_flash/cam_flash_core.o
+  AR      drivers/media/platform/msm/camera/cam_sync/built-in.o
+  CC      drivers/mmc/core/host.o
+  CC      drivers/mmc/host/sdhci-msm.o
+  CC      drivers/media/platform/msm/camera/cam_utils/cam_packet_util.o
+  CC      drivers/media/platform/msm/camera/cam_utils/cam_trace.o
+  CC      drivers/gpu/drm/msm/sde_power_handle.o
+  AR      drivers/media/platform/msm/camera/cam_sensor_module/cam_eeprom/built-in.o
+  CC      drivers/nfc/nq-nci.o
+  CC      drivers/media/platform/msm/camera/cam_utils/cam_cx_ipeak.o
+  CC      drivers/media/platform/msm/camera/cam_sensor_module/cam_ois/cam_ois_dev.o
+  CC      drivers/media/platform/msm/camera/cam_sensor_module/cam_ois/cam_ois_core.o
+  CC      drivers/media/platform/msm/camera/cam_sensor_module/cam_flash/cam_flash_soc.o
   CC      drivers/media/platform/msm/vidc/hfi_packetization.o
-  AR      drivers/power/built-in.o
   CC      drivers/media/platform/msm/vidc/vidc_hfi.o
   CC      drivers/media/platform/msm/vidc/venus_boot.o
+  AR      drivers/nfc/built-in.o
+  CC      drivers/gpu/drm/msm/sde/sde_hw_color_processing_v1_7.o
+  CC      drivers/media/platform/msm/camera/cam_sensor_module/cam_ois/cam_ois_soc.o
+  AR      drivers/media/platform/msm/camera/cam_utils/built-in.o
+  CC      drivers/net/phy/mdio_bus.o
+  CC      drivers/mmc/core/slot-gpio.o
+  CC      drivers/of/of_mdio.o
+  AR      drivers/media/platform/msm/camera/cam_sensor_module/cam_flash/built-in.o
+  CC      drivers/media/platform/msm/camera/cam_sensor_module/cam_res_mgr/cam_res_mgr.o
   CC      drivers/media/platform/msm/vidc/msm_vidc_clocks.o
   CC      drivers/media/platform/msm/vidc/governors/msm_vidc_dyn_gov.o
-  AR      drivers/media/platform/msm/camera/cam_sensor_module/cam_sensor_io/built-in.o
-  AR      drivers/media/v4l2-core/built-in.o
-  AR      drivers/media/platform/msm/camera/cam_sensor_module/cam_sensor/built-in.o
-  CC      drivers/media/platform/msm/camera/cam_sensor_module/cam_sensor_utils/cam_sensor_util.o
+  CC      drivers/net/ethernet/smsc/smsc911x.o
+  AR      drivers/media/platform/msm/camera/cam_sensor_module/cam_ois/built-in.o
+  CC      drivers/pci/host/pci-msm.o
+  CC      drivers/media/platform/msm/camera/cam_sensor_module/cam_sensor_io/cam_sensor_io.o
+  CC      drivers/media/platform/msm/camera/cam_sensor_module/cam_sensor/cam_sensor_dev.o
+  CC      drivers/gpu/drm/msm/sde/sde_reg_dma.o
+  AR      drivers/mmc/core/mmc_core.o
+  AR      drivers/mmc/core/built-in.o
+  CC      drivers/media/platform/msm/camera/cam_sensor_module/cam_sensor_io/cam_sensor_cci_i2c.o
+  CC      drivers/media/platform/msm/camera/cam_sensor_module/cam_sensor_io/cam_sensor_qup_i2c.o
+  AR      drivers/of/built-in.o
+  CC      drivers/net/phy/at803x.o
+  AR      drivers/media/platform/msm/camera/cam_sensor_module/cam_res_mgr/built-in.o
   CC      drivers/media/platform/msm/vidc/governors/msm_vidc_ar50_dyn_gov.o
+  CC      drivers/media/platform/msm/camera/cam_sensor_module/cam_sensor_utils/cam_sensor_util.o
+  CC      drivers/net/phy/fixed_phy.o
+  CC      drivers/gpu/drm/msm/sde/sde_hw_reg_dma_v1.o
+  AR      drivers/mmc/host/built-in.o
+  AR      drivers/mmc/built-in.o
+  AR      drivers/media/platform/msm/vidc/msm-vidc.o
+  CC      drivers/media/platform/msm/camera/cam_sensor_module/cam_sensor/cam_sensor_core.o
+  CC      drivers/pinctrl/qcom/pinctrl-msm.o
+  CC      drivers/media/platform/msm/camera/cam_sensor_module/cam_sensor_io/cam_sensor_spi.o
+  AR      drivers/net/ethernet/smsc/built-in.o
+  CC      drivers/platform/msm/msm_11ad/msm_11ad.o
+  AR      drivers/net/ethernet/built-in.o
+  AR      drivers/net/phy/libphy.o
+  CC      drivers/gpu/drm/msm/sde/sde_hw_dsc.o
   AR      drivers/media/platform/msm/vidc/governors/msm-vidc-dyn-gov.o
-  CC      drivers/usb/core/hcd.o
-  CC      drivers/usb/dwc3/core.o
-  CC      drivers/usb/gadget/config.o
-  CC      drivers/usb/gadget/composite.o
   AR      drivers/media/platform/msm/vidc/governors/msm-vidc-ar50-dyn-gov.o
-  CC      drivers/usb/gadget/functions.o
   AR      drivers/media/platform/msm/vidc/governors/built-in.o
+  AR      drivers/media/platform/msm/vidc/built-in.o
+  CC      drivers/gpu/drm/msm/sde/sde_hw_ds.o
+  CC      drivers/pinctrl/qcom/pinctrl-spmi-gpio.o
+  CC      drivers/pinctrl/qcom/pinctrl-spmi-mpp.o
+  AR      drivers/net/phy/built-in.o
+  CC      drivers/media/platform/msm/camera/cam_sensor_module/cam_sensor/cam_sensor_soc.o
+  AR      drivers/media/platform/msm/camera/cam_sensor_module/cam_sensor_utils/built-in.o
+  CC      drivers/platform/msm/ipa/ipa_v3/rmnet_ipa.o
+  AR      drivers/media/platform/msm/camera/cam_sensor_module/cam_sensor_io/built-in.o
+  CC      drivers/power/oppo/adapter_ic/oppo_stm.o
+  CC      drivers/gpu/drm/msm/sde/sde_hw_qdss.o
+  CC      drivers/gpu/drm/msm/sde/sde_wb.o
+  CC      drivers/gpu/drm/msm/sde/sde_encoder_phys_wb.o
+  CC      drivers/power/oppo/charger_ic/oppo_battery_sm7150_P.o
+  AR      drivers/net/built-in.o
+  CC      drivers/gpu/drm/msm/msm_atomic.o
+  CC      drivers/power/oppo/charger_ic/oppo_short_ic.o
+  CC      drivers/pinctrl/qcom/pinctrl-slpi.o
+  AR      drivers/media/platform/msm/camera/cam_sensor_module/cam_sensor/built-in.o
+  AR      drivers/media/platform/msm/camera/cam_sensor_module/built-in.o
+  AR      drivers/media/platform/msm/camera/built-in.o
+  AR      drivers/platform/msm/msm_11ad/msm_11ad_proxy.o
+  AR      drivers/platform/msm/msm_11ad/built-in.o
+  AR      drivers/media/platform/msm/built-in.o
+  CC      drivers/gpu/drm/msm/msm_drv.o
+  AR      drivers/media/platform/built-in.o
+  AR      drivers/media/built-in.o
+  AR      drivers/pci/host/built-in.o
+  AR      drivers/pci/built-in.o
+  AR      drivers/power/oppo/adapter_ic/built-in.o
+  CC      drivers/power/oppo/gauge_ic/oppo_bq27541.o
+  AR      drivers/pinctrl/qcom/built-in.o
+  CC      drivers/power/oppo/vooc_ic/oppo_n76e.o
+  CC      drivers/gpu/drm/msm/msm_fb.o
+  AR      drivers/pinctrl/built-in.o
+  CC      drivers/power/oppo/vooc_ic/oppo_vooc_fw.o
+  CC      drivers/regulator/core.o
+  CC      drivers/power/oppo/vooc_ic/oppo_stm8s.o
+  CC      drivers/power/oppo/vooc_ic/oppo_rk826.o
+  CC      drivers/gpu/drm/msm/msm_gem.o
+  CC      drivers/power/oppo/vooc_ic/oppo_op10.o
+  CC      drivers/power/oppo/oppo_charger.o
+  CC      drivers/gpu/drm/msm/msm_gem_prime.o
+  CC      drivers/gpu/drm/msm/msm_gem_submit.o
+  AR      drivers/power/oppo/gauge_ic/built-in.o
+  CC      drivers/gpu/drm/msm/msm_gem_shrinker.o
+  CC      drivers/gpu/drm/msm/msm_gem_vma.o
+  AR      drivers/platform/msm/ipa/ipa_v3/built-in.o
+  AR      drivers/platform/msm/ipa/built-in.o
+  AR      drivers/platform/msm/built-in.o
+  AR      drivers/platform/built-in.o
+  CC      drivers/gpu/drm/msm/msm_gpu.o
+  CC      drivers/gpu/drm/msm/msm_iommu.o
+  CC      drivers/gpu/drm/msm/msm_smmu.o
+  AR      drivers/power/oppo/vooc_ic/built-in.o
+  CC      drivers/power/oppo/oppo_vooc.o
+  CC      drivers/power/oppo/oppo_adapter.o
+  CC      drivers/gpu/drm/msm/msm_perf.o
+  CC      drivers/gpu/drm/msm/msm_rd.o
+  CC      drivers/gpu/drm/msm/msm_ringbuffer.o
+  CC      drivers/gpu/drm/msm/msm_prop.o
+  CC      drivers/soc/oppo/device_info/device_info.o
+  CC      drivers/soc/oppo/project_info/boot_mode.o
+  AR      drivers/power/oppo/charger_ic/built-in.o
+  CC      drivers/power/oppo/oppo_short.o
+  CC      drivers/regulator/fixed.o
+  CC      drivers/gpu/drm/msm/msm_fence.o
+  CC      drivers/gpu/drm/msm/msm_debugfs.o
+  CC      drivers/spi/spi.o
+  AR      drivers/soc/oppo/device_info/built-in.o
+  AR      drivers/regulator/built-in.o
+  AR      drivers/soc/oppo/project_info/built-in.o
+  AR      drivers/soc/oppo/built-in.o
+  AR      drivers/power/oppo/built-in.o
+  AR      drivers/power/built-in.o
+  AR      drivers/soc/built-in.o
+  CC      drivers/usb/gadget/config.o
+  CC      drivers/usb/dwc3/core.o
+  CC      drivers/usb/gadget/composite.o
+  CC      drivers/usb/gadget/functions.o
   CC      drivers/usb/gadget/configfs.o
+  CC      drivers/usb/core/hcd.o
+  AR      drivers/gpu/drm/msm/msm_drm.o
+  AR      drivers/gpu/drm/msm/built-in.o
+  CC      drivers/usb/phy/phy-generic.o
+  AR      drivers/gpu/drm/built-in.o
+  AR      drivers/gpu/built-in.o
   CC      drivers/usb/dwc3/gadget.o
   CC      drivers/usb/dwc3/ep0.o
   CC      drivers/usb/gadget/function/u_ether.o
-  AR      drivers/media/platform/msm/camera/cam_sensor_module/cam_sensor_utils/built-in.o
-  AR      drivers/media/platform/msm/camera/cam_sensor_module/built-in.o
-  AR      drivers/media/platform/msm/camera/built-in.o
   CC      drivers/usb/gadget/function/rndis.o
-  AR      drivers/media/platform/msm/vidc/msm-vidc.o
-  AR      drivers/media/platform/msm/vidc/built-in.o
-  AR      drivers/media/platform/msm/built-in.o
-  AR      drivers/media/platform/built-in.o
-  AR      drivers/media/built-in.o
   CC      drivers/usb/gadget/function/f_ncm.o
+  AR      drivers/usb/phy/built-in.o
   CC      drivers/usb/gadget/function/f_mass_storage.o
   CC      drivers/usb/gadget/function/storage_common.o
   CC      drivers/usb/gadget/function/f_fs.o
+  AR      drivers/usb/gadget/libcomposite.o
   CC      drivers/usb/gadget/function/f_midi.o
+  CC      drivers/usb/dwc3/dwc3-msm.o
+  AR      drivers/spi/built-in.o
   AR      drivers/usb/core/usbcore.o
   AR      drivers/usb/core/built-in.o
   CC      drivers/usb/gadget/function/f_hid.o
   CC      drivers/usb/gadget/function/f_mtp.o
   CC      drivers/usb/gadget/function/f_ptp.o
-  AR      drivers/usb/gadget/libcomposite.o
   CC      drivers/usb/gadget/function/f_audio_source.o
+  AR      drivers/usb/dwc3/dwc3.o
   CC      drivers/usb/gadget/function/f_accessory.o
   CC      drivers/usb/gadget/function/f_diag.o
   CC      drivers/usb/gadget/function/f_cdev.o
   CC      drivers/usb/gadget/function/f_ccid.o
-  AR      drivers/usb/dwc3/dwc3.o
-  AR      drivers/usb/dwc3/built-in.o
   CC      drivers/usb/gadget/function/f_gsi.o
   CC      drivers/usb/gadget/function/f_qdss.o
   CC      drivers/usb/gadget/function/u_qdss.o
   AR      drivers/usb/gadget/function/usb_f_ncm.o
   AR      drivers/usb/gadget/function/usb_f_midi.o
   AR      drivers/usb/gadget/function/usb_f_hid.o
+  AR      drivers/usb/gadget/function/usb_f_mtp.o
   AR      drivers/usb/gadget/function/usb_f_ptp.o
   AR      drivers/usb/gadget/function/usb_f_audio_source.o
-  AR      drivers/usb/gadget/function/usb_f_mtp.o
   AR      drivers/usb/gadget/function/usb_f_ccid.o
   AR      drivers/usb/gadget/function/usb_f_cdev.o
+  AR      drivers/usb/gadget/function/usb_f_fs.o
+  AR      drivers/usb/gadget/function/usb_f_mass_storage.o
   AR      drivers/usb/gadget/function/usb_f_diag.o
   AR      drivers/usb/gadget/function/usb_f_accessory.o
   AR      drivers/usb/gadget/function/usb_f_qdss.o
-  AR      drivers/usb/gadget/function/usb_f_fs.o
-  AR      drivers/usb/gadget/function/usb_f_mass_storage.o
+  AR      drivers/usb/dwc3/built-in.o
   AR      drivers/usb/gadget/function/usb_f_gsi.o
   AR      drivers/usb/gadget/function/built-in.o
   AR      drivers/usb/gadget/built-in.o
@@ -466,8 +737,8 @@ scripts/kconfig/conf  --silentoldconfig Kconfig
   CC      drivers/staging/qcacld-3.0/core/mac/src/pe/lim/lim_process_mlm_rsp_messages.o
   CC      drivers/staging/qcacld-3.0/core/mac/src/pe/lim/lim_process_probe_req_frame.o
   CC      drivers/staging/qcacld-3.0/core/mac/src/pe/lim/lim_process_probe_rsp_frame.o
-  CC      drivers/staging/qcacld-3.0/core/mac/src/pe/lim/lim_prop_exts_utils.o
   CC      drivers/staging/qcacld-3.0/core/mac/src/pe/lim/lim_process_sme_req_messages.o
+  CC      drivers/staging/qcacld-3.0/core/mac/src/pe/lim/lim_prop_exts_utils.o
   CC      drivers/staging/qcacld-3.0/core/mac/src/pe/lim/lim_scan_result_utils.o
   CC      drivers/staging/qcacld-3.0/core/mac/src/pe/lim/lim_security_utils.o
   CC      drivers/staging/qcacld-3.0/core/mac/src/pe/lim/lim_send_management_frames.o
