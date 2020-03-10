@@ -2426,7 +2426,6 @@ void composite_resume(struct usb_gadget *gadget)
 	unsigned int			maxpower;
 	int				ret;
 	unsigned long			flags;
-	unsigned			maxpower;
 
 	/* REVISIT:  should we have config level
 	 * suspend/resume callbacks?

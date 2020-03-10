@@ -12,25 +12,17 @@ scripts/kconfig/conf  --silentoldconfig Kconfig
   CHK     include/generated/asm-offsets.h
   CALL    ../scripts/checksyscalls.sh
   CHK     include/generated/compile.h
-  CHK     kernel/config_data.h
   DTC     arch/arm64/boot/dts/qcom/sdmmagpie.dtb
+  CHK     kernel/config_data.h
   DTC     arch/arm64/boot/dts/qcom/sdmmagpie-idp-overlay.dtbo
-  AR      drivers/scsi/scsi_mod.o
-  CC      drivers/scsi/ufs/ufshcd.o
-  CC      drivers/scsi/ufs/ufshcd-pltfrm.o
-  CC      drivers/scsi/ufs/ufs-debugfs.o
-  CC      drivers/scsi/ufs/ufs-qcom-debugfs.o
-../drivers/scsi/ufs/ufshcd.c:5315:7: warning: unused variable 'err' [-Wunused-variable]
-                int err;
-                    ^
-../drivers/scsi/ufs/ufshcd.c:5349:1: warning: non-void function does not return a value in all control paths [-Wreturn-type]
-}
-^
-  AR      drivers/scsi/sd_mod.o
-  CC      drivers/scsi/ch.o
-2 warnings generated.
-  AR      drivers/scsi/ufs/built-in.o
-  AR      drivers/scsi/built-in.o
+  CC      drivers/usb/gadget/composite.o
+  CC      drivers/usb/gadget/udc/core.o
+  CC      drivers/usb/gadget/udc/trace.o
+  AR      drivers/usb/gadget/libcomposite.o
+  AR      drivers/usb/gadget/udc/udc-core.o
+  AR      drivers/usb/gadget/udc/built-in.o
+  AR      drivers/usb/gadget/built-in.o
+  AR      drivers/usb/built-in.o
   AR      drivers/built-in.o
   GEN     .version
   CHK     include/generated/compile.h
