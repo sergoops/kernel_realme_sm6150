@@ -66,7 +66,7 @@ DEVICE="X2"
 # your device or check source
 DEFCONFIG=artemis_x2_defconfig
 
-# Specify compiler. 
+# Specify compiler.
 # 'CLANG' or 'GCC'
 COMPILER=CLANG
 
@@ -148,7 +148,7 @@ KERVER=$(make kernelversion)
 # Set a commit head
 COMMIT_HEAD=$(git log --oneline -1)
 
-# Set Date 
+# Set Date
 DATE=$(TZ=Asia/Kolkata date +"%Y%m%d-%s")
 
 #Now Its time for other stuffs like cloning, exporting, etc
@@ -167,15 +167,15 @@ DATE=$(TZ=Asia/Kolkata date +"%Y%m%d-%s")
 	if [ $COMPILER = "CLANG" ]
 	then
 		msg "|| Cloning Clang-13 ||"
-		#git clone --depth=1 https://github.com/kdrag0n/proton-clang.git clang-llvm
+		git clone --depth=1 https://github.com/kdrag0n/proton-clang.git clang-llvm
 		# Toolchain Directory defaults to clang-llvm
 		TC_DIR=$KERNEL_DIR/clang-llvm
 	fi
 
 	msg "|| Cloning Anykernel ||"
-	#git clone --no-single-branch https://github.com/sergoops/AnyKernel3.git -b main
+	git clone --no-single-branch https://github.com/sergoops/AnyKernel3.git -b main
 	msg "|| Cloning libufdt ||"
-	#git clone --depth=1 https://android.googlesource.com/platform/system/libufdt libufdt
+	git clone --depth=1 https://android.googlesource.com/platform/system/libufdt libufdt
 }
 
 ##------------------------------------------------------##
