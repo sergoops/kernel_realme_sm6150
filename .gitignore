@@ -141,3 +141,5 @@ clang-llvm/
 gcc32/
 gcc64/
 libufdt/
+build.sh
+error.log
