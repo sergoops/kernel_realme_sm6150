@@ -137,5 +137,7 @@ logs/
 scripts/ufdt/
 AnyKernel3/
 clang/
+clang-llvm/
 gcc32/
 gcc64/
+libufdt/
