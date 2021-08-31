@@ -272,33 +272,6 @@ early_param("ssbd", ssbd_cfg);
 
 void arm64_set_ssbd_mitigation(bool state)
 {
-	if (this_cpu_has_cap(ARM64_SSBS)) {
-		if (state)
-			asm volatile(SET_PSTATE_SSBS(0));
-		else
-			asm volatile(SET_PSTATE_SSBS(1));
-		return;
-	}
-
-	*updptr = cpu_to_le32(insn);
-}
-
-void __init arm64_enable_wa2_handling(struct alt_instr *alt,
-				      __le32 *origptr, __le32 *updptr,
-				      int nr_inst)
-{
-	BUG_ON(nr_inst != 1);
-	/*
-	 * Only allow mitigation on EL1 entry/exit and guest
-	 * ARCH_WORKAROUND_2 handling if the SSBD state allows it to
-	 * be flipped.
-	 */
-	if (arm64_get_ssbd_state() == ARM64_SSBD_KERNEL)
-		*updptr = cpu_to_le32(aarch64_insn_gen_nop());
-}
-
-void arm64_set_ssbd_mitigation(bool state)
-{
 	if (!IS_ENABLED(CONFIG_ARM64_SSBD)) {
 		pr_info_once("SSBD disabled by kernel configuration\n");
 		return;
@@ -500,6 +473,13 @@ static const struct midr_range spectre_v2_safe_list[] = {
 	MIDR_ALL_VERSIONS(MIDR_CORTEX_A35),
 	MIDR_ALL_VERSIONS(MIDR_CORTEX_A53),
 	MIDR_ALL_VERSIONS(MIDR_CORTEX_A55),
+	MIDR_ALL_VERSIONS(MIDR_KRYO3S),
+	MIDR_ALL_VERSIONS(MIDR_KRYO4S),
+	MIDR_ALL_VERSIONS(MIDR_KRYO2XX_SILVER),
+	MIDR_RANGE(MIDR_KRYO4G, 0, 0, 12, 13),
+	MIDR_RANGE(MIDR_KRYO4G, 13, 15,
+		   (MIDR_VARIANT_MASK >> MIDR_VARIANT_SHIFT),
+		   MIDR_REVISION_MASK),	
 	{ /* sentinel */ }
 };
 
@@ -603,7 +583,7 @@ const struct arm64_cpu_capabilities arm64_errata[] = {
 	/* Kryo2xx Silver rAp4 */
 		.desc = "Kryo2xx Silver erratum 845719",
 		.capability = ARM64_WORKAROUND_845719,
-		MIDR_RANGE(MIDR_KRYO2XX_SILVER, 0xA00004, 0xA00004),
+		ERRATA_MIDR_REV_RANGE(MIDR_KRYO2XX_SILVER, 0xA, 4, 4),
 	},
 #endif
 #ifdef CONFIG_CAVIUM_ERRATUM_23154
@@ -692,15 +672,15 @@ const struct arm64_cpu_capabilities arm64_errata[] = {
 	/* Cortex-A76 r0p0 to r3p0 */
 		.desc = "ARM erratum 1286807",
 		.capability = ARM64_WORKAROUND_REPEAT_TLBI,
-		MIDR_RANGE(MIDR_CORTEX_A76,
-			   MIDR_CPU_VAR_REV(0, 0),
-			   MIDR_CPU_VAR_REV(3, 0)),
+		ERRATA_MIDR_RANGE(MIDR_CORTEX_A76,
+				  0, 0,
+				  3, 0),
 	},
 	{
 		.capability = ARM64_WORKAROUND_REPEAT_TLBI,
-		MIDR_RANGE(MIDR_KRYO4G,
-			   MIDR_CPU_VAR_REV(12, 14),
-			   MIDR_CPU_VAR_REV(13, 14)),
+		ERRATA_MIDR_RANGE(MIDR_KRYO4G,
+				  12, 14,
+				  13, 14),
 	},
 #endif
 #ifdef CONFIG_ARM64_ERRATUM_858921
@@ -714,7 +694,7 @@ const struct arm64_cpu_capabilities arm64_errata[] = {
 	/* KRYO2XX all versions */
 		.desc = "ARM erratum 858921",
 		.capability = ARM64_WORKAROUND_858921,
-		MIDR_ALL_VERSIONS(MIDR_KRYO2XX_GOLD),
+		ERRATA_MIDR_ALL_VERSIONS(MIDR_KRYO2XX_GOLD),
 	},
 #endif
 	{
@@ -722,19 +702,6 @@ const struct arm64_cpu_capabilities arm64_errata[] = {
 		.type = ARM64_CPUCAP_LOCAL_CPU_ERRATUM,
 		.matches = check_branch_predictor,
 	},
-	{
-		.capability = ARM64_HARDEN_BRANCH_PREDICTOR,
-		MIDR_RANGE(MIDR_KRYO4G,
-			   MIDR_CPU_VAR_REV(12, 14),
-			   MIDR_CPU_VAR_REV(13, 14)),
-		.enable = enable_smccc_arch_workaround_1,
-	},
-	{
-		.capability = ARM64_HARDEN_BRANCH_PREDICTOR,
-		MIDR_ALL_VERSIONS(MIDR_KRYO2XX_GOLD),
-		.enable = enable_smccc_arch_workaround_1,
-	},
-#endif
 	{
 		.desc = "Speculative Store Bypass Disable",
 		.type = ARM64_CPUCAP_LOCAL_CPU_ERRATUM,
@@ -747,18 +714,18 @@ const struct arm64_cpu_capabilities arm64_errata[] = {
 		.desc = "ARM erratum 1188873",
 		.capability = ARM64_WORKAROUND_1188873,
 		/* Cortex-A76 r0p0 to r2p0 */
-		MIDR_RANGE(MIDR_CORTEX_A76,
-			MIDR_CPU_VAR_REV(0, 0),
-			MIDR_CPU_VAR_REV(2, 0)),
+		ERRATA_MIDR_RANGE(MIDR_CORTEX_A76,
+				  0, 0,
+				  2, 0),
 
 	},
 	{
 		.desc = "ARM erratum 1188873",
 		.capability = ARM64_WORKAROUND_1188873,
 		/* Kryo-4G r15p14 */
-		MIDR_RANGE(MIDR_KRYO4G,
-			MIDR_CPU_VAR_REV(15, 14),
-			MIDR_CPU_VAR_REV(15, 15)),
+		ERRATA_MIDR_RANGE(MIDR_KRYO4G,
+				  15, 14,
+				  15, 15),
 	},
 #endif
 	{

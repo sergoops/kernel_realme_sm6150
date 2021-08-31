@@ -953,9 +953,9 @@ static bool cpu_has_broken_dbm(void)
 	static const struct midr_range cpus[] = {
 #ifdef CONFIG_ARM64_ERRATUM_1024718
 		// A55 r0p0 -r1p0
-		GENERIC_MIDR_RANGE(MIDR_CORTEX_A55, 0, 0, 1, 0),
-		GENERIC_MIDR_RANGE(MIDR_KRYO3S, 7, 12, 7, 12),
-		GENERIC_MIDR_RANGE(MIDR_KRYO4S, 7, 12, 7, 12),
+		MIDR_RANGE(MIDR_CORTEX_A55, 0, 0, 1, 0),
+		MIDR_RANGE(MIDR_KRYO3S, 7, 12, 7, 12),
+		MIDR_RANGE(MIDR_KRYO4S, 7, 12, 7, 12),
 #endif
 		{},
 	};
@@ -974,15 +974,10 @@ static bool cpu_can_use_dbm(const struct arm64_cpu_capabilities *cap)
 	return has_cpu_feature && !cpu_has_broken_dbm();
 }
 
-static int cpu_enable_hw_dbm(void *entry)
+static void cpu_enable_hw_dbm(struct arm64_cpu_capabilities const *cap)
 {
-	const struct arm64_cpu_capabilities *cap =
-		(const struct arm64_cpu_capabilities *) entry;
-
 	if (cpu_can_use_dbm(cap))
 		__cpu_enable_hw_dbm();
-
-	return 0;
 }
 
 static bool has_hw_dbm(const struct arm64_cpu_capabilities *cap,
@@ -1205,12 +1200,13 @@ static const struct arm64_cpu_capabilities arm64_features[] = {
 		 *
 		 */
 		.capability = ARM64_HW_DBM,
+		.type = ARM64_CPUCAP_WEAK_LOCAL_CPU_FEATURE,
 		.sys_reg = SYS_ID_AA64MMFR1_EL1,
 		.sign = FTR_UNSIGNED,
 		.field_pos = ID_AA64MMFR1_HADBS_SHIFT,
 		.min_field_value = 2,
 		.matches = has_hw_dbm,
-		.enable = cpu_enable_hw_dbm,
+		.cpu_enable = cpu_enable_hw_dbm,
 	},
 #endif
 #ifdef CONFIG_ARM64_SSBD
