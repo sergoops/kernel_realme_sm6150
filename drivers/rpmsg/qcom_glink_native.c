@@ -299,7 +299,7 @@ static void qcom_glink_channel_release(struct kref *ref)
 	wake_up(&channel->intent_req_event);
 
 	/* cancel pending rx_done work */
-	cancel_work_sync(&channel->intent_work);
+	kthread_cancel_work_sync(&channel->intent_work);
 
 	spin_lock_irqsave(&channel->intent_lock, flags);
 	/* Free all non-reuse intents pending rx_done work */
@@ -1916,6 +1916,9 @@ static void qcom_glink_notif_reset(void *data)
 		wake_up(&channel->intent_req_event);
 	}
 	spin_unlock_irqrestore(&glink->idr_lock, flags);
+
+}
+
 static void qcom_glink_cancel_rx_work(struct qcom_glink *glink)
 {
 	struct glink_defer_cmd *dcmd;
