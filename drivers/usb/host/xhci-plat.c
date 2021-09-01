@@ -483,7 +483,6 @@ static int xhci_plat_resume(struct device *dev)
 
 	dev_dbg(dev, "xhci-plat PM resume\n");
 
-<<<<<<< HEAD
 	ret = xhci_priv_resume_quirk(hcd);
 	if (ret)
 		return ret;
