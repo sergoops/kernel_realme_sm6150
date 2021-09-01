@@ -3217,13 +3217,11 @@ static inline struct f_fs_opts *ffs_do_functionfs_bind(struct usb_function *f,
 	if (!ffs_opts->refcnt) {
 		ret = functionfs_bind(func->ffs, c->cdev);
 		if (ret) {
-			ffs_log("functionfs_bind returned %d", ret);
 			return ERR_PTR(ret);
 		}
 	}
 	ffs_opts->refcnt++;
 	func->function.strings = func->ffs->stringtabs;
-
 	return ffs_opts;
 }
 
