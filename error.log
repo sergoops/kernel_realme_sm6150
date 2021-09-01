@@ -14,204 +14,99 @@ scripts/kconfig/conf  --silentoldconfig Kconfig
   CHK     include/generated/compile.h
   CHK     kernel/config_data.h
   DTC     arch/arm64/boot/dts/qcom/sdmmagpie.dtb
-  CC      drivers/md/dm-table.o
   DTC     arch/arm64/boot/dts/qcom/sdmmagpie-idp-overlay.dtbo
-  AR      drivers/md/dm-mod.o
-  AR      drivers/md/built-in.o
-  CC      drivers/staging/qcacld-3.0/core/mac/src/pe/lim/lim_api.o
-  CC      drivers/staging/qcacld-3.0/core/mac/src/pe/lim/lim_assoc_utils.o
-  CC      drivers/staging/qcacld-3.0/core/mac/src/pe/lim/lim_ft.o
-  CC      drivers/staging/qcacld-3.0/core/mac/src/pe/lim/lim_ibss_peer_mgmt.o
-  CC      drivers/staging/qcacld-3.0/core/mac/src/pe/lim/lim_link_monitoring_algo.o
-  CC      drivers/staging/qcacld-3.0/core/mac/src/pe/lim/lim_process_action_frame.o
-  CC      drivers/staging/qcacld-3.0/core/mac/src/pe/lim/lim_process_assoc_req_frame.o
-  CC      drivers/staging/qcacld-3.0/core/mac/src/pe/lim/lim_process_assoc_rsp_frame.o
-  CC      drivers/staging/qcacld-3.0/core/mac/src/pe/lim/lim_process_auth_frame.o
-  CC      drivers/staging/qcacld-3.0/core/mac/src/pe/lim/lim_process_beacon_frame.o
-  CC      drivers/staging/qcacld-3.0/core/mac/src/pe/lim/lim_process_cfg_updates.o
-  CC      drivers/staging/qcacld-3.0/core/mac/src/pe/lim/lim_process_deauth_frame.o
-  CC      drivers/staging/qcacld-3.0/core/mac/src/pe/lim/lim_process_disassoc_frame.o
-  CC      drivers/staging/qcacld-3.0/core/mac/src/pe/lim/lim_process_message_queue.o
-  CC      drivers/staging/qcacld-3.0/core/mac/src/pe/lim/lim_process_mlm_req_messages.o
-  CC      drivers/staging/qcacld-3.0/core/mac/src/pe/lim/lim_process_mlm_rsp_messages.o
-  CC      drivers/staging/qcacld-3.0/core/mac/src/pe/lim/lim_process_probe_req_frame.o
-  CC      drivers/staging/qcacld-3.0/core/mac/src/pe/lim/lim_process_probe_rsp_frame.o
-  CC      drivers/staging/qcacld-3.0/core/mac/src/pe/lim/lim_process_sme_req_messages.o
-  CC      drivers/staging/qcacld-3.0/core/mac/src/pe/lim/lim_prop_exts_utils.o
-  CC      drivers/staging/qcacld-3.0/core/mac/src/pe/lim/lim_scan_result_utils.o
-  CC      drivers/staging/qcacld-3.0/core/mac/src/pe/lim/lim_security_utils.o
-  CC      drivers/staging/qcacld-3.0/core/mac/src/pe/lim/lim_send_management_frames.o
-  CC      drivers/staging/qcacld-3.0/core/mac/src/pe/lim/lim_send_messages.o
-  CC      drivers/staging/qcacld-3.0/core/mac/src/pe/lim/lim_send_sme_rsp_messages.o
-  CC      drivers/staging/qcacld-3.0/core/mac/src/pe/lim/lim_ser_des_utils.o
-  CC      drivers/staging/qcacld-3.0/core/mac/src/pe/lim/lim_session.o
-  CC      drivers/staging/qcacld-3.0/core/mac/src/pe/lim/lim_session_utils.o
-  CC      drivers/staging/qcacld-3.0/core/mac/src/pe/lim/lim_sme_req_utils.o
-  CC      drivers/staging/qcacld-3.0/core/mac/src/pe/lim/lim_sta_hash_api.o
-  CC      drivers/staging/qcacld-3.0/core/mac/src/pe/lim/lim_timer_utils.o
-  CC      drivers/staging/qcacld-3.0/core/mac/src/pe/lim/lim_trace.o
-  CC      drivers/staging/qcacld-3.0/core/mac/src/pe/lim/lim_utils.o
-  CC      drivers/staging/qcacld-3.0/core/mac/src/pe/lim/lim_process_tdls.o
-  CC      drivers/staging/qcacld-3.0/core/mac/src/pe/lim/lim_process_fils.o
-  CC      drivers/staging/qcacld-3.0/core/mac/src/pe/lim/lim_process_mlm_host_roam.o
-  CC      drivers/staging/qcacld-3.0/core/mac/src/pe/lim/lim_send_frames_host_roam.o
-  CC      drivers/staging/qcacld-3.0/core/mac/src/pe/lim/lim_roam_timer_utils.o
-  CC      drivers/staging/qcacld-3.0/core/mac/src/pe/lim/lim_ft_preauth.o
-  CC      drivers/staging/qcacld-3.0/core/mac/src/pe/lim/lim_reassoc_utils.o
-  CC      drivers/staging/qcacld-3.0/core/mac/src/pe/sch/sch_api.o
-  CC      drivers/staging/qcacld-3.0/core/mac/src/pe/sch/sch_beacon_gen.o
-  CC      drivers/staging/qcacld-3.0/core/mac/src/pe/sch/sch_beacon_process.o
-  CC      drivers/staging/qcacld-3.0/core/mac/src/pe/sch/sch_message.o
-  CC      drivers/staging/qcacld-3.0/core/mac/src/pe/rrm/rrm_api.o
-  CC      drivers/staging/qcacld-3.0/core/mac/src/pe/nan/nan_datapath.o
-  CC      drivers/staging/qcacld-3.0/core/sap/src/sap_api_link_cntl.o
-  CC      drivers/staging/qcacld-3.0/core/sap/src/sap_ch_select.o
-  CC      drivers/staging/qcacld-3.0/core/sap/src/sap_fsm.o
-  CC      drivers/staging/qcacld-3.0/core/sap/src/sap_module.o
-  CC      drivers/staging/qcacld-3.0/core/sme/src/common/sme_api.o
-  CC      drivers/staging/qcacld-3.0/core/sme/src/common/sme_ft_api.o
-  CC      drivers/staging/qcacld-3.0/core/sme/src/common/sme_power_save.o
-  CC      drivers/staging/qcacld-3.0/core/sme/src/common/sme_trace.o
-  CC      drivers/staging/qcacld-3.0/core/sme/src/csr/csr_api_roam.o
-  CC      drivers/staging/qcacld-3.0/core/sme/src/csr/csr_api_scan.o
-  CC      drivers/staging/qcacld-3.0/core/sme/src/csr/csr_cmd_process.o
-  CC      drivers/staging/qcacld-3.0/core/sme/src/csr/csr_link_list.o
-  CC      drivers/staging/qcacld-3.0/core/sme/src/csr/csr_neighbor_roam.o
-  CC      drivers/staging/qcacld-3.0/core/sme/src/csr/csr_util.o
-  CC      drivers/staging/qcacld-3.0/core/sme/src/csr/csr_roam_preauth.o
-  CC      drivers/staging/qcacld-3.0/core/sme/src/csr/csr_host_scan_roam.o
-  CC      drivers/staging/qcacld-3.0/core/sme/src/qos/sme_qos.o
-  CC      drivers/staging/qcacld-3.0/core/sme/src/rrm/sme_rrm.o
-  CC      drivers/staging/qcacld-3.0/core/sme/src/nan/nan_api.o
-  CC      drivers/staging/qcacld-3.0/core/sme/src/nan/nan_datapath_api.o
-  CC      drivers/staging/qcacld-3.0/core/mac/src/sys/common/src/wlan_qct_sys.o
-  CC      drivers/staging/qcacld-3.0/core/mac/src/sys/legacy/src/platform/src/sys_wrapper.o
-  CC      drivers/staging/qcacld-3.0/core/mac/src/sys/legacy/src/system/src/mac_init_api.o
-  CC      drivers/staging/qcacld-3.0/core/mac/src/sys/legacy/src/system/src/sys_entry_func.o
-  CC      drivers/staging/qcacld-3.0/core/mac/src/sys/legacy/src/utils/src/dot11f.o
-  CC      drivers/staging/qcacld-3.0/core/mac/src/sys/legacy/src/utils/src/mac_trace.o
-  CC      drivers/staging/qcacld-3.0/core/mac/src/sys/legacy/src/utils/src/parser_api.o
-  CC      drivers/staging/qcacld-3.0/core/mac/src/sys/legacy/src/utils/src/utils_parser.o
-  CC      drivers/staging/qcacld-3.0/../qca-wifi-host-cmn/qdf/linux/src/qdf_defer.o
-  CC      drivers/staging/qcacld-3.0/../qca-wifi-host-cmn/qdf/linux/src/qdf_event.o
-  CC      drivers/staging/qcacld-3.0/../qca-wifi-host-cmn/qdf/linux/src/qdf_file.o
-  CC      drivers/staging/qcacld-3.0/../qca-wifi-host-cmn/qdf/linux/src/qdf_list.o
-  CC      drivers/staging/qcacld-3.0/../qca-wifi-host-cmn/qdf/linux/src/qdf_lock.o
-  CC      drivers/staging/qcacld-3.0/../qca-wifi-host-cmn/qdf/linux/src/qdf_mc_timer.o
-  CC      drivers/staging/qcacld-3.0/../qca-wifi-host-cmn/qdf/linux/src/qdf_mem.o
-  CC      drivers/staging/qcacld-3.0/../qca-wifi-host-cmn/qdf/linux/src/qdf_nbuf.o
-  CC      drivers/staging/qcacld-3.0/../qca-wifi-host-cmn/qdf/linux/src/qdf_threads.o
-  CC      drivers/staging/qcacld-3.0/../qca-wifi-host-cmn/qdf/linux/src/qdf_crypto.o
-  CC      drivers/staging/qcacld-3.0/../qca-wifi-host-cmn/qdf/linux/src/qdf_trace.o
-  CC      drivers/staging/qcacld-3.0/../qca-wifi-host-cmn/qdf/linux/src/qdf_idr.o
-  CC      drivers/staging/qcacld-3.0/../qca-wifi-host-cmn/qdf/src/qdf_flex_mem.o
-  CC      drivers/staging/qcacld-3.0/../qca-wifi-host-cmn/qdf/src/qdf_parse.o
-  CC      drivers/staging/qcacld-3.0/../qca-wifi-host-cmn/qdf/src/qdf_platform.o
-  CC      drivers/staging/qcacld-3.0/../qca-wifi-host-cmn/qdf/src/qdf_str.o
-  CC      drivers/staging/qcacld-3.0/../qca-wifi-host-cmn/qdf/src/qdf_types.o
-  CC      drivers/staging/qcacld-3.0/../qca-wifi-host-cmn/qdf/linux/src/qdf_debugfs.o
-  CC      drivers/staging/qcacld-3.0/../qca-wifi-host-cmn/qdf/linux/src/qdf_ipa.o
-  CC      drivers/staging/qcacld-3.0/../qca-wifi-host-cmn/qdf/src/qdf_cpuhp.o
-  CC      drivers/staging/qcacld-3.0/../qca-wifi-host-cmn/qdf/linux/src/qdf_cpuhp.o
-  CC      drivers/staging/qcacld-3.0/../qca-wifi-host-cmn/qdf/src/qdf_notifier.o
-  CC      drivers/staging/qcacld-3.0/../qca-wifi-host-cmn/qdf/src/qdf_hang_event_notifier.o
-  CC      drivers/staging/qcacld-3.0/../qca-wifi-host-cmn/wbuff/src/wbuff.o
-  CC      drivers/staging/qcacld-3.0/core/cds/src/cds_api.o
-  CC      drivers/staging/qcacld-3.0/core/cds/src/cds_reg_service.o
-  CC      drivers/staging/qcacld-3.0/core/cds/src/cds_packet.o
-  CC      drivers/staging/qcacld-3.0/core/cds/src/cds_regdomain.o
-  CC      drivers/staging/qcacld-3.0/core/cds/src/cds_sched.o
-  CC      drivers/staging/qcacld-3.0/core/cds/src/cds_utils.o
-  CC      drivers/staging/qcacld-3.0/../qca-wifi-host-cmn/ftm/dispatcher/src/wlan_ftm_init_deinit.o
-  CC      drivers/staging/qcacld-3.0/../qca-wifi-host-cmn/ftm/dispatcher/src/wlan_ftm_ucfg_api.o
-  CC      drivers/staging/qcacld-3.0/../qca-wifi-host-cmn/ftm/core/src/wlan_ftm_svc.o
-  CC      drivers/staging/qcacld-3.0/../qca-wifi-host-cmn/os_if/linux/ftm/src/wlan_cfg80211_ftm.o
-  CC      drivers/staging/qcacld-3.0/../qca-wifi-host-cmn/target_if/ftm/src/target_if_ftm.o
-  CC      drivers/staging/qcacld-3.0/core/wma/src/wma_main.o
-  CC      drivers/staging/qcacld-3.0/core/wma/src/wma_scan_roam.o
-  CC      drivers/staging/qcacld-3.0/core/wma/src/wma_dev_if.o
-  CC      drivers/staging/qcacld-3.0/core/wma/src/wma_mgmt.o
-  CC      drivers/staging/qcacld-3.0/core/wma/src/wma_power.o
-  CC      drivers/staging/qcacld-3.0/core/wma/src/wma_data.o
-  CC      drivers/staging/qcacld-3.0/core/wma/src/wma_utils.o
-  CC      drivers/staging/qcacld-3.0/core/wma/src/wma_features.o
-  CC      drivers/staging/qcacld-3.0/core/wma/src/wlan_qct_wma_legacy.o
-  CC      drivers/staging/qcacld-3.0/core/wma/src/wma_nan_datapath.o
-  CC      drivers/staging/qcacld-3.0/core/wma/src/wma_fips_api.o
-  CC      drivers/staging/qcacld-3.0/core/wma/src/wma_twt.o
-  CC      drivers/staging/qcacld-3.0/core/wma/src/wma_coex.o
-  CC      drivers/staging/qcacld-3.0/core/dp/txrx/ol_txrx.o
-  CC      drivers/staging/qcacld-3.0/core/dp/txrx/ol_cfg.o
-  CC      drivers/staging/qcacld-3.0/core/dp/txrx/ol_rx.o
-  CC      drivers/staging/qcacld-3.0/core/dp/txrx/ol_rx_fwd.o
-  CC      drivers/staging/qcacld-3.0/core/dp/txrx/ol_rx_defrag.o
-  CC      drivers/staging/qcacld-3.0/core/dp/txrx/ol_tx_desc.o
-  CC      drivers/staging/qcacld-3.0/core/dp/txrx/ol_tx.o
-  CC      drivers/staging/qcacld-3.0/core/dp/txrx/ol_rx_reorder_timeout.o
-  CC      drivers/staging/qcacld-3.0/core/dp/txrx/ol_rx_reorder.o
-  CC      drivers/staging/qcacld-3.0/core/dp/txrx/ol_rx_pn.o
-  CC      drivers/staging/qcacld-3.0/core/dp/txrx/ol_tx_queue.o
-  CC      drivers/staging/qcacld-3.0/core/dp/txrx/ol_txrx_peer_find.o
-  CC      drivers/staging/qcacld-3.0/core/dp/txrx/ol_tx_send.o
-  CC      drivers/staging/qcacld-3.0/core/dp/txrx/ol_tx_sched.o
-  CC      drivers/staging/qcacld-3.0/core/dp/txrx/ol_tx_classify.o
-  CC      drivers/staging/qcacld-3.0/core/dp/txrx/ol_txrx_flow_control.o
-  CC      drivers/staging/qcacld-3.0/core/dp/txrx/ol_txrx_ipa.o
-  CC      drivers/staging/qcacld-3.0/core/dp/txrx/ol_tx_ll_fastpath.o
-  CC      drivers/staging/qcacld-3.0/../qca-wifi-host-cmn/wmi/src/wmi_unified.o
-  CC      drivers/staging/qcacld-3.0/../qca-wifi-host-cmn/wmi/src/wmi_tlv_helper.o
-  CC      drivers/staging/qcacld-3.0/../qca-wifi-host-cmn/wmi/src/wmi_unified_tlv.o
-  CC      drivers/staging/qcacld-3.0/../qca-wifi-host-cmn/wmi/src/wmi_unified_api.o
-  CC      drivers/staging/qcacld-3.0/../qca-wifi-host-cmn/wmi/src/wmi_unified_reg_api.o
-  CC      drivers/staging/qcacld-3.0/../qca-wifi-host-cmn/wmi/src/wmi_unified_pmo_api.o
-  CC      drivers/staging/qcacld-3.0/../qca-wifi-host-cmn/wmi/src/wmi_unified_apf_tlv.o
-  CC      drivers/staging/qcacld-3.0/../qca-wifi-host-cmn/wmi/src/wmi_unified_action_oui_tlv.o
-  CC      drivers/staging/qcacld-3.0/../qca-wifi-host-cmn/wmi/src/wmi_unified_dfs_api.o
-  CC      drivers/staging/qcacld-3.0/../qca-wifi-host-cmn/wmi/src/wmi_unified_twt_api.o
-  CC      drivers/staging/qcacld-3.0/../qca-wifi-host-cmn/wmi/src/wmi_unified_twt_tlv.o
-  CC      drivers/staging/qcacld-3.0/../qca-wifi-host-cmn/wmi/src/wmi_unified_extscan_api.o
-  CC      drivers/staging/qcacld-3.0/../qca-wifi-host-cmn/wmi/src/wmi_unified_extscan_tlv.o
-  CC      drivers/staging/qcacld-3.0/../qca-wifi-host-cmn/wmi/src/wmi_hang_event.o
-  CC      drivers/staging/qcacld-3.0/../qca-wifi-host-cmn/htc/htc.o
-  CC      drivers/staging/qcacld-3.0/../qca-wifi-host-cmn/htc/htc_send.o
-  CC      drivers/staging/qcacld-3.0/../qca-wifi-host-cmn/htc/htc_recv.o
-  CC      drivers/staging/qcacld-3.0/../qca-wifi-host-cmn/htc/htc_services.o
-  CC      drivers/staging/qcacld-3.0/../qca-wifi-host-cmn/htc/htc_credit_history.o
-  CC      drivers/staging/qcacld-3.0/../qca-wifi-host-cmn/htc/htc_hang_event.o
-  CC      drivers/staging/qcacld-3.0/../qca-wifi-host-cmn/init_deinit/dispatcher/src/dispatcher_init_deinit.o
-  CC      drivers/staging/qcacld-3.0/../qca-wifi-host-cmn/scheduler/src/scheduler_api.o
-  CC      drivers/staging/qcacld-3.0/../qca-wifi-host-cmn/scheduler/src/scheduler_core.o
-  CC      drivers/staging/qcacld-3.0/../qca-wifi-host-cmn/umac/regulatory/core/src/reg_db.o
-  CC      drivers/staging/qcacld-3.0/../qca-wifi-host-cmn/umac/regulatory/core/src/reg_services.o
-  CC      drivers/staging/qcacld-3.0/../qca-wifi-host-cmn/umac/regulatory/core/src/reg_db_parser.o
-  CC      drivers/staging/qcacld-3.0/../qca-wifi-host-cmn/umac/regulatory/dispatcher/src/wlan_reg_services_api.o
-  CC      drivers/staging/qcacld-3.0/../qca-wifi-host-cmn/umac/regulatory/dispatcher/src/wlan_reg_tgt_api.o
-  CC      drivers/staging/qcacld-3.0/../qca-wifi-host-cmn/umac/regulatory/dispatcher/src/wlan_reg_ucfg_api.o
-  CC      drivers/staging/qcacld-3.0/../qca-wifi-host-cmn/hif/src/hif_napi.o
-  CC      drivers/staging/qcacld-3.0/../qca-wifi-host-cmn/hif/src/dispatcher/multibus.o
-  CC      drivers/staging/qcacld-3.0/../qca-wifi-host-cmn/hif/src/dispatcher/dummy.o
-  CC      drivers/staging/qcacld-3.0/../qca-wifi-host-cmn/hif/src/ath_procfs.o
-  CC      drivers/staging/qcacld-3.0/../qca-wifi-host-cmn/hif/src/hif_main.o
-  CC      drivers/staging/qcacld-3.0/../qca-wifi-host-cmn/hif/src/mp_dev.o
-  CC      drivers/staging/qcacld-3.0/../qca-wifi-host-cmn/hif/src/hif_exec.o
-  CC      drivers/staging/qcacld-3.0/../qca-wifi-host-cmn/hif/src/hif_irq_affinity.o
-  CC      drivers/staging/qcacld-3.0/../qca-wifi-host-cmn/hif/src/snoc/if_snoc.o
-  CC      drivers/staging/qcacld-3.0/../qca-wifi-host-cmn/hif/src/ce/ce_bmi.o
-  CC      drivers/staging/qcacld-3.0/../qca-wifi-host-cmn/hif/src/ce/ce_diag.o
-  CC      drivers/staging/qcacld-3.0/../qca-wifi-host-cmn/hif/src/ce/ce_main.o
-  CC      drivers/staging/qcacld-3.0/../qca-wifi-host-cmn/hif/src/ce/ce_service.o
-  CC      drivers/staging/qcacld-3.0/../qca-wifi-host-cmn/hif/src/ce/ce_tasklet.o
-  CC      drivers/staging/qcacld-3.0/../qca-wifi-host-cmn/hif/src/regtable.o
-  CC      drivers/staging/qcacld-3.0/../qca-wifi-host-cmn/hif/src/dispatcher/multibus_snoc.o
-  CC      drivers/staging/qcacld-3.0/core/bmi/src/bmi.o
-  CC      drivers/staging/qcacld-3.0/core/bmi/src/ol_fw.o
-  CC      drivers/staging/qcacld-3.0/core/bmi/src/ol_fw_common.o
-  CC      drivers/staging/qcacld-3.0/core/bmi/src/bmi_1.o
-  CC      drivers/staging/qcacld-3.0/core/dp/htt/htt_tx.o
-  CC      drivers/staging/qcacld-3.0/core/dp/htt/htt.o
-  CC      drivers/staging/qcacld-3.0/core/dp/htt/htt_t2h.o
-  CC      drivers/staging/qcacld-3.0/core/dp/htt/htt_h2t.o
-  CC      drivers/staging/qcacld-3.0/core/dp/htt/htt_fw_stats.o
+  CC      drivers/usb/dwc3/gadget.o
+  CC      drivers/usb/misc/ehset.o
+  CC      drivers/usb/pd/policy_engine.o
+  CC      drivers/usb/isp1760/isp1760-core.o
+  CC      drivers/usb/pd/qpnp-pdphy.o
+  AR      drivers/usb/gadget/function/usb_f_ncm.o
+  CC      drivers/usb/misc/lvstest.o
+  AR      drivers/usb/gadget/function/usb_f_mass_storage.o
+  CC      drivers/usb/host/pci-quirks.o
+  CC      drivers/usb/gadget/function/f_fs.o
+  CC      drivers/usb/host/ehci-hcd.o
+  CC      drivers/usb/host/ehci-pci.o
+  CC      drivers/usb/host/ehci-platform.o
+  CC      drivers/usb/host/ohci-hcd.o
+  CC      drivers/usb/isp1760/isp1760-if.o
+  AR      drivers/usb/misc/built-in.o
+  CC      drivers/usb/phy/phy.o
+  CC      drivers/usb/host/ohci-pci.o
+  CC      drivers/usb/host/ohci-platform.o
+  CC      drivers/usb/host/xhci.o
+  CC      drivers/usb/isp1760/isp1760-hcd.o
+  CC      drivers/usb/host/xhci-mem.o
+  CC      drivers/usb/host/xhci-ring.o
+  AR      drivers/usb/pd/built-in.o
+  CC      drivers/usb/phy/of.o
+  CC      drivers/usb/host/xhci-hub.o
+  CC      drivers/usb/phy/class-dual-role.o
+  CC      drivers/usb/dwc3/drd.o
+  AR      drivers/usb/gadget/function/usb_f_midi.o
+  AR      drivers/usb/gadget/function/usb_f_hid.o
+  CC      drivers/usb/gadget/function/f_mtp.o
+  CC      drivers/usb/gadget/function/f_ptp.o
+  AR      drivers/usb/isp1760/isp1760.o
+  CC      drivers/usb/dwc3/debugfs.o
+  CC      drivers/usb/phy/phy-generic.o
+  AR      drivers/usb/isp1760/built-in.o
+  CC      drivers/usb/host/xhci-dbg.o
+  CC      drivers/usb/storage/scsiglue.o
+  CC      drivers/usb/host/xhci-trace.o
+  CC      drivers/usb/host/xhci-pci.o
+  CC      drivers/usb/gadget/function/f_audio_source.o
+  CC      drivers/usb/host/xhci-plat.o
+  CC      drivers/usb/gadget/function/f_accessory.o
+  CC      drivers/usb/storage/protocol.o
+  CC      drivers/usb/dwc3/dwc3-of-simple.o
+  CC      drivers/usb/phy/phy-qcom-emu.o
+  CC      drivers/usb/gadget/function/f_diag.o
+  CC      drivers/usb/storage/transport.o
+  CC      drivers/usb/storage/usb.o
+  CC      drivers/usb/gadget/function/f_cdev.o
+  CC      drivers/usb/storage/initializers.o
+  CC      drivers/usb/storage/sierra_ms.o
+  CC      drivers/usb/phy/phy-msm-ssusb-qmp.o
+  CC      drivers/usb/dwc3/dwc3-msm.o
+  AR      drivers/usb/host/xhci-plat-hcd.o
+  AR      drivers/usb/host/xhci-hcd.o
+  CC      drivers/usb/dwc3/dbm.o
+  AR      drivers/usb/host/built-in.o
+  AR      drivers/usb/dwc3/dwc3.o
+  CC      drivers/usb/storage/option_ms.o
+  CC      drivers/usb/storage/usual-tables.o
+  CC      drivers/usb/gadget/function/f_ccid.o
+  CC      drivers/usb/gadget/function/f_gsi.o
+  CC      drivers/usb/gadget/function/f_qdss.o
+  CC      drivers/usb/gadget/function/u_qdss.o
+  CC      drivers/usb/phy/phy-msm-qusb.o
+  CC      drivers/usb/phy/phy-msm-qusb-v2.o
+  AR      drivers/usb/gadget/function/usb_f_fs.o
+  AR      drivers/usb/gadget/function/usb_f_mtp.o
+  CC      drivers/usb/phy/phy-msm-snps-hs.o
+  AR      drivers/usb/gadget/function/usb_f_ptp.o
+  AR      drivers/usb/gadget/function/usb_f_audio_source.o
+  AR      drivers/usb/gadget/function/usb_f_accessory.o
+  AR      drivers/usb/gadget/function/usb_f_diag.o
+  AR      drivers/usb/gadget/function/usb_f_cdev.o
+  AR      drivers/usb/storage/usb-storage.o
+  AR      drivers/usb/storage/built-in.o
+  AR      drivers/usb/gadget/function/usb_f_ccid.o
+../drivers/usb/phy/phy-msm-qusb.c:1171:4: warning: misleading indentation; statement is not part of the previous 'if' [-Wmisleading-indentation]
+                        dev_err(dev, "couldn't get iface_clk(%d)\n", ret);
+                        ^
+../drivers/usb/phy/phy-msm-qusb.c:1169:3: note: previous statement is here
+                if (ret == -EPROBE_DEFER)
+                ^
+1 warning generated.
+  AR      drivers/usb/gadget/function/usb_f_qdss.o
+  AR      drivers/usb/phy/built-in.o
+  AR      drivers/usb/dwc3/built-in.o
+  AR      drivers/usb/gadget/function/usb_f_gsi.o
+  AR      drivers/usb/gadget/function/built-in.o
+  AR      drivers/usb/gadget/built-in.o
+  AR      drivers/usb/built-in.o
   CC      drivers/staging/qcacld-3.0/core/dp/htt/htt_rx.o
   CC      drivers/staging/qcacld-3.0/../qca-wifi-host-cmn/os_if/linux/p2p/src/wlan_cfg80211_p2p.o
   CC      drivers/staging/qcacld-3.0/../qca-wifi-host-cmn/os_if/linux/wlan_osif_request_manager.o
@@ -278,6 +173,7 @@ scripts/kconfig/conf  --silentoldconfig Kconfig
   CC      drivers/staging/qcacld-3.0/../qca-wifi-host-cmn/target_if/wifi_pos/src/target_if_wifi_pos.o
   CC      drivers/staging/qcacld-3.0/../qca-wifi-host-cmn/umac/nan/core/src/nan_main.o
   CC      drivers/staging/qcacld-3.0/../qca-wifi-host-cmn/umac/nan/core/src/nan_api.o
+  CC      drivers/staging/qcacld-3.0/../qca-wifi-host-cmn/umac/nan/core/src/nan_utils.o
   CC      drivers/staging/qcacld-3.0/../qca-wifi-host-cmn/umac/nan/dispatcher/src/nan_ucfg_api.o
   CC      drivers/staging/qcacld-3.0/../qca-wifi-host-cmn/target_if/nan/src/target_if_nan.o
   CC      drivers/staging/qcacld-3.0/../qca-wifi-host-cmn/os_if/linux/nan/src/os_if_nan.o
@@ -291,6 +187,7 @@ scripts/kconfig/conf  --silentoldconfig Kconfig
   CC      drivers/staging/qcacld-3.0/../qca-wifi-host-cmn/umac/tdls/core/src/wlan_tdls_ct.o
   CC      drivers/staging/qcacld-3.0/../qca-wifi-host-cmn/umac/tdls/dispatcher/src/wlan_tdls_tgt_api.o
   CC      drivers/staging/qcacld-3.0/../qca-wifi-host-cmn/umac/tdls/dispatcher/src/wlan_tdls_ucfg_api.o
+  CC      drivers/staging/qcacld-3.0/../qca-wifi-host-cmn/umac/tdls/dispatcher/src/wlan_tdls_utils_api.o
   CC      drivers/staging/qcacld-3.0/../qca-wifi-host-cmn/os_if/linux/tdls/src/wlan_cfg80211_tdls.o
   CC      drivers/staging/qcacld-3.0/components/pmo/core/src/wlan_pmo_main.o
   CC      drivers/staging/qcacld-3.0/components/pmo/core/src/wlan_pmo_apf.o
@@ -379,6 +276,7 @@ scripts/kconfig/conf  --silentoldconfig Kconfig
   CC      drivers/staging/qcacld-3.0/../qca-wifi-host-cmn/target_if/spectral/target_if_spectral_netlink.o
   CC      drivers/staging/qcacld-3.0/../qca-wifi-host-cmn/target_if/spectral/target_if_spectral_phyerr.o
   CC      drivers/staging/qcacld-3.0/../qca-wifi-host-cmn/target_if/spectral/target_if_spectral.o
+  CC      drivers/staging/qcacld-3.0/../qca-wifi-host-cmn/target_if/spectral/target_if_spectral_sim.o
   CC      drivers/staging/qcacld-3.0/../qca-wifi-host-cmn/umac/green_ap/core/src/wlan_green_ap_main.o
   CC      drivers/staging/qcacld-3.0/../qca-wifi-host-cmn/umac/green_ap/dispatcher/src/wlan_green_ap_api.o
   CC      drivers/staging/qcacld-3.0/../qca-wifi-host-cmn/umac/green_ap/dispatcher/src/wlan_green_ap_ucfg_api.o
