@@ -1683,13 +1683,13 @@ static const struct usb_gadget_driver configfs_driver_template = {
 	.bind           = configfs_composite_bind,
 	.unbind         = configfs_composite_unbind,
 #ifdef CONFIG_USB_CONFIGFS_UEVENT
-	.setup          = configfs_composite_setup,
-	.reset          = configfs_composite_disconnect,
-	.disconnect     = configfs_composite_disconnect,
+	.setup = android_setup,
+	.reset = android_disconnect,
+	.disconnect = android_disconnect,
 #else
-	.setup          = configfs_composite_setup,
-	.reset          = configfs_composite_disconnect,
-	.disconnect     = configfs_composite_disconnect,
+	.setup = configfs_composite_setup,
+	.reset = configfs_composite_disconnect,
+	.disconnect = configfs_composite_disconnect,
 #endif
 	.suspend	= configfs_composite_suspend,
 	.resume		= configfs_composite_resume,
