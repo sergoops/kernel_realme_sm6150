@@ -15,16 +15,10 @@ scripts/kconfig/conf  --silentoldconfig Kconfig
   CHK     kernel/config_data.h
   DTC     arch/arm64/boot/dts/qcom/sdmmagpie.dtb
   DTC     arch/arm64/boot/dts/qcom/sdmmagpie-idp-overlay.dtbo
-  CC      drivers/usb/gadget/configfs.o
-../drivers/usb/gadget/configfs.c:1505:12: warning: unused function 'configfs_composite_setup' [-Wunused-function]
-static int configfs_composite_setup(struct usb_gadget *gadget,
-           ^
-../drivers/usb/gadget/configfs.c:1530:13: warning: unused function 'configfs_composite_disconnect' [-Wunused-function]
-static void configfs_composite_disconnect(struct usb_gadget *gadget)
-            ^
-2 warnings generated.
-  AR      drivers/usb/gadget/libcomposite.o
-  AR      drivers/usb/gadget/built-in.o
+  AR      drivers/usb/host/xhci-hcd.o
+  CC      drivers/usb/host/xhci-plat.o
+  AR      drivers/usb/host/xhci-plat-hcd.o
+  AR      drivers/usb/host/built-in.o
   AR      drivers/usb/built-in.o
   AR      drivers/built-in.o
   GEN     .version
