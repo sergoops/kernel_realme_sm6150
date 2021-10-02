@@ -158,8 +158,8 @@ DATE=$(TZ=Asia/Kolkata date +"%Y%m%d-%s")
 	if [ $COMPILER = "GCC" ]
 	then
 		msg "|| Cloning GCC 9.3.0 baremetal ||"
-		git clone --depth=1 https://github.com/mvaisakh/gcc-arm64.git -b gcc-new gcc64
-		git clone --depth=1 https://github.com/mvaisakh/gcc-arm.git -b gcc-new gcc32
+		#git clone --depth=1 https://github.com/mvaisakh/gcc-arm64.git -b gcc-new gcc64
+		#git clone --depth=1 https://github.com/mvaisakh/gcc-arm.git -b gcc-new gcc32
 		GCC64_DIR=$KERNEL_DIR/gcc64
 		GCC32_DIR=$KERNEL_DIR/gcc32
 	fi
@@ -167,15 +167,15 @@ DATE=$(TZ=Asia/Kolkata date +"%Y%m%d-%s")
 	if [ $COMPILER = "CLANG" ]
 	then
 		msg "|| Cloning Clang-13 ||"
-		git clone --depth=1 https://github.com/kdrag0n/proton-clang.git clang-llvm
+		#git clone --depth=1 https://github.com/kdrag0n/proton-clang.git clang-llvm
 		# Toolchain Directory defaults to clang-llvm
 		TC_DIR=$KERNEL_DIR/clang-llvm
 	fi
 
 	msg "|| Cloning Anykernel ||"
-	git clone --no-single-branch https://github.com/sergoops/AnyKernel3.git -b main
+	#git clone --no-single-branch https://github.com/sergoops/AnyKernel3.git -b main
 	msg "|| Cloning libufdt ||"
-	git clone --depth=1 https://android.googlesource.com/platform/system/libufdt libufdt
+	#git clone --depth=1 https://android.googlesource.com/platform/system/libufdt libufdt
 }
 
 ##------------------------------------------------------##
